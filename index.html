@@ -6,6 +6,7 @@
 <title>A. NAYEM — AI ARCHITECT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Barlow:wght@300;400;500&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -599,190 +600,136 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2.5rem;display:flex;jus
 </footer>
 
 <script>
-// ── PURE CANVAS 2D PARTICLE + GRID SYSTEM (no dependencies) ──
+// ── THREE.JS PARTICLE FIELD ──
 (function(){
   const canvas = document.getElementById('three-bg');
-  const ctx = canvas.getContext('2d');
-  let W = window.innerWidth, H = window.innerHeight;
-  canvas.width = W; canvas.height = H;
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x000000, 0);
 
-  let mouseX = W/2, mouseY = H/2;
-  let targetMX = W/2, targetMY = H/2;
-  let scrollY = 0;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+  camera.position.z = 5;
 
-  document.addEventListener('mousemove', e => { targetMX = e.clientX; targetMY = e.clientY; });
+  // === PARTICLE SYSTEM ===
+  const PARTICLE_COUNT = 3000;
+  const positions = new Float32Array(PARTICLE_COUNT * 3);
+  const colors    = new Float32Array(PARTICLE_COUNT * 3);
+  const sizes     = new Float32Array(PARTICLE_COUNT);
+  const speeds    = new Float32Array(PARTICLE_COUNT);
+
+  for(let i = 0; i < PARTICLE_COUNT; i++){
+    const i3 = i * 3;
+    positions[i3]   = (Math.random() - 0.5) * 30;
+    positions[i3+1] = (Math.random() - 0.5) * 20;
+    positions[i3+2] = (Math.random() - 0.5) * 15;
+    const isRed = Math.random() < 0.08;
+    colors[i3]   = isRed ? 0.91 : 0.9 + Math.random()*0.1;
+    colors[i3+1] = isRed ? 0.0  : 0.9 + Math.random()*0.1;
+    colors[i3+2] = isRed ? 0.11 : 0.9 + Math.random()*0.1;
+    sizes[i]  = Math.random() * 2.5 + 0.5;
+    speeds[i] = Math.random() * 0.002 + 0.0005;
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geo.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
+  geo.setAttribute('size',     new THREE.BufferAttribute(sizes, 1));
+
+  const mat = new THREE.PointsMaterial({
+    size: 0.04, vertexColors: true, transparent: true, opacity: 0.7,
+    sizeAttenuation: true, blending: THREE.AdditiveBlending, depthWrite: false
+  });
+
+  const particles = new THREE.Points(geo, mat);
+  scene.add(particles);
+
+  // === PERSPECTIVE GRID ===
+  const gridGeo = new THREE.BufferGeometry();
+  const gridVerts = [];
+  const GRID_SIZE = 30; const GRID_STEP = 2;
+  for(let x = -GRID_SIZE; x <= GRID_SIZE; x += GRID_STEP){
+    gridVerts.push(x, -8, -20, x, -8, 20);
+  }
+  for(let z = -20; z <= 20; z += GRID_STEP){
+    gridVerts.push(-GRID_SIZE, -8, z, GRID_SIZE, -8, z);
+  }
+  gridGeo.setAttribute('position', new THREE.Float32BufferAttribute(gridVerts, 3));
+  const gridMat = new THREE.LineBasicMaterial({color:0xe8002d, transparent:true, opacity:0.07});
+  const grid = new THREE.LineSegments(gridGeo, gridMat);
+  scene.add(grid);
+
+  // === FLOATING WIREFRAME SHAPES ===
+  const shapes = [];
+  const shapeGeos = [
+    new THREE.IcosahedronGeometry(0.3, 0),
+    new THREE.OctahedronGeometry(0.25, 0),
+    new THREE.TetrahedronGeometry(0.28, 0),
+  ];
+  const wireMat = new THREE.MeshBasicMaterial({color:0xe8002d, wireframe:true, transparent:true, opacity:0.25});
+  for(let i = 0; i < 12; i++){
+    const mesh = new THREE.Mesh(shapeGeos[i % 3], wireMat.clone());
+    mesh.position.set(
+      (Math.random()-0.5)*20,
+      (Math.random()-0.5)*12,
+      (Math.random()-0.5)*8 - 3
+    );
+    mesh.userData.rotSpeed = {x:(Math.random()-0.5)*0.01, y:(Math.random()-0.5)*0.012};
+    mesh.userData.floatSpeed  = Math.random()*0.5+0.3;
+    mesh.userData.floatAmp    = Math.random()*0.15+0.05;
+    mesh.userData.floatOffset = Math.random()*Math.PI*2;
+    scene.add(mesh);
+    shapes.push(mesh);
+  }
+
+  // === MOUSE + SCROLL ===
+  let mouse = {x:0, y:0}, targetMouse = {x:0, y:0}, scrollY = 0;
+  document.addEventListener('mousemove', e => {
+    targetMouse.x = (e.clientX/window.innerWidth - 0.5) * 2;
+    targetMouse.y = -(e.clientY/window.innerHeight - 0.5) * 2;
+  });
   window.addEventListener('scroll', () => { scrollY = window.scrollY; });
 
-  // ── PARTICLES ──
-  const N = 220;
-  const pts = Array.from({length:N}, () => ({
-    x: Math.random() * W,
-    y: Math.random() * H,
-    z: Math.random(),           // depth 0-1
-    vx: (Math.random()-0.5) * 0.18,
-    vy: -(Math.random() * 0.35 + 0.05),
-    r: Math.random() * 1.6 + 0.4,
-    red: Math.random() < 0.09,
-    alpha: Math.random() * 0.55 + 0.2,
-    twinkle: Math.random() * Math.PI * 2,
-    twinkleSpeed: Math.random() * 0.02 + 0.005,
-  }));
-
-  // ── WIREFRAME SHAPES (2D projected polygons) ──
-  function makeShape(type, cx, cy, size, phase){
-    return {type, cx, cy, size, phase, rot:0, rotSpeed:(Math.random()-0.5)*0.008,
-            vy:(Math.random()-0.5)*0.12, floatAmp:12+Math.random()*18,
-            floatSpeed:0.003+Math.random()*0.004, t:Math.random()*Math.PI*2};
-  }
-  const shapes = [
-    makeShape('tri',  W*0.12, H*0.22, 28),
-    makeShape('hex',  W*0.88, H*0.18, 22),
-    makeShape('oct',  W*0.75, H*0.55, 18),
-    makeShape('tri',  W*0.05, H*0.65, 20),
-    makeShape('hex',  W*0.92, H*0.78, 16),
-    makeShape('oct',  W*0.45, H*0.08, 14),
-    makeShape('tri',  W*0.55, H*0.88, 19),
-    makeShape('hex',  W*0.22, H*0.82, 17),
-  ];
-
-  function drawShape(s, t){
-    const n = s.type==='tri'?3 : s.type==='hex'?6 : 8;
-    const y = s.cy + Math.sin(t * s.floatSpeed + s.t) * s.floatAmp;
-    // mouse parallax
-    const px = (mouseX/W - 0.5) * 30 * (s.size/28);
-    const py = (mouseY/H - 0.5) * 20 * (s.size/28);
-    ctx.save();
-    ctx.translate(s.cx + px, y + py);
-    ctx.rotate(s.rot);
-    ctx.beginPath();
-    for(let i=0;i<n;i++){
-      const a = (i/n)*Math.PI*2 - Math.PI/2;
-      const x2 = Math.cos(a)*s.size, y2 = Math.sin(a)*s.size;
-      i===0 ? ctx.moveTo(x2,y2) : ctx.lineTo(x2,y2);
-    }
-    ctx.closePath();
-    // inner lines
-    const pts2=[];
-    for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2-Math.PI/2;pts2.push([Math.cos(a)*s.size,Math.sin(a)*s.size]);}
-    for(let i=0;i<n;i+=2){
-      ctx.moveTo(pts2[i][0],pts2[i][1]);
-      ctx.lineTo(0,0);
-    }
-    ctx.strokeStyle = 'rgba(232,0,45,0.22)';
-    ctx.lineWidth = 0.8;
-    ctx.stroke();
-    ctx.restore();
-    s.rot += s.rotSpeed;
-    s.t += 0.016;
-  }
-
-  // ── PERSPECTIVE GRID ──
-  function drawGrid(t){
-    const LINES = 14;
-    const horizon = H * 0.72 - scrollY * 0.04;
-    const vanishX = W/2 + (mouseX - W/2) * 0.08;
-    const speed = (t * 0.4) % 1;
-
-    ctx.save();
-    // vertical lines
-    for(let i=0;i<=LINES;i++){
-      const tx = i / LINES;
-      const bx = tx * W;
-      ctx.beginPath();
-      ctx.moveTo(vanishX, horizon);
-      ctx.lineTo(bx, H + 60);
-      const dist = Math.abs(tx - 0.5);
-      ctx.strokeStyle = `rgba(232,0,45,${0.04 + dist * 0.04})`;
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-    }
-    // horizontal lines with scroll animation
-    for(let j=0;j<10;j++){
-      const frac = ((j/9) + speed) % 1;
-      const y = horizon + Math.pow(frac, 2.2) * (H + 80 - horizon);
-      const alpha = frac * 0.09;
-      const xl = vanishX - (vanishX) * frac;
-      const xr = vanishX + (W - vanishX) * frac;
-      ctx.beginPath();
-      ctx.moveTo(xl, y);
-      ctx.lineTo(xr, y);
-      ctx.strokeStyle = `rgba(232,0,45,${alpha})`;
-      ctx.lineWidth = 0.5;
-      ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  // ── MAIN LOOP ──
+  // === ANIMATE ===
   let t = 0;
-  function loop(){
-    requestAnimationFrame(loop);
-    t += 0.016;
+  function animate(){
+    requestAnimationFrame(animate);
+    t += 0.01;
+    mouse.x += (targetMouse.x - mouse.x) * 0.05;
+    mouse.y += (targetMouse.y - mouse.y) * 0.05;
 
-    // smooth mouse
-    mouseX += (targetMX - mouseX) * 0.05;
-    mouseY += (targetMY - mouseY) * 0.05;
+    particles.rotation.x = mouse.y * 0.08 + scrollY * 0.0003;
+    particles.rotation.y = mouse.x * 0.1;
 
-    ctx.clearRect(0,0,W,H);
-
-    drawGrid(t);
-
-    // draw connection lines between close particles
-    for(let i=0;i<N;i++){
-      for(let j=i+1;j<N;j++){
-        const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<110){
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x,pts[i].y);
-          ctx.lineTo(pts[j].x,pts[j].y);
-          const a=(1-dist/110)*0.06;
-          ctx.strokeStyle=`rgba(255,255,255,${a})`;
-          ctx.lineWidth=0.4;
-          ctx.stroke();
-        }
-      }
+    const pos = geo.attributes.position.array;
+    for(let i = 0; i < PARTICLE_COUNT; i++){
+      pos[i*3+1] += speeds[i];
+      if(pos[i*3+1] > 10) pos[i*3+1] = -10;
     }
+    geo.attributes.position.needsUpdate = true;
 
-    // draw & move particles
-    const mx_off = (mouseX/W - 0.5) * 12;
-    const my_off = (mouseY/H - 0.5) * 8;
-    pts.forEach(p => {
-      p.twinkle += p.twinkleSpeed;
-      const tw = 0.7 + Math.sin(p.twinkle) * 0.3;
-      const parallax = p.z * 0.6;
-      const px = p.x - mx_off * parallax;
-      const py = p.y - my_off * parallax;
-
-      ctx.beginPath();
-      ctx.arc(px, py, p.r, 0, Math.PI*2);
-      if(p.red){
-        ctx.fillStyle = `rgba(232,0,45,${p.alpha * tw})`;
-        // glow
-        ctx.shadowColor = '#E8002D';
-        ctx.shadowBlur = 6;
-      } else {
-        ctx.fillStyle = `rgba(220,225,255,${p.alpha * tw})`;
-        ctx.shadowBlur = 0;
-      }
-      ctx.fill();
-      ctx.shadowBlur = 0;
-
-      p.x += p.vx + mx_off * 0.003;
-      p.y += p.vy;
-      if(p.y < -10) { p.y = H + 5; p.x = Math.random()*W; }
-      if(p.x < -10) p.x = W+5;
-      if(p.x > W+10) p.x = -5;
+    shapes.forEach(s => {
+      s.rotation.x += s.userData.rotSpeed.x;
+      s.rotation.y += s.userData.rotSpeed.y;
+      s.position.y += Math.sin(t * s.userData.floatSpeed + s.userData.floatOffset) * s.userData.floatAmp * 0.01;
     });
 
-    shapes.forEach(s => drawShape(s, t));
+    grid.position.y = -8 + scrollY * 0.003;
+    grid.material.opacity = Math.max(0.02, 0.07 - scrollY * 0.00005);
+
+    camera.position.x += (mouse.x * 0.3 - camera.position.x) * 0.03;
+    camera.position.y += (mouse.y * 0.2 - camera.position.y) * 0.03;
+    camera.lookAt(scene.position);
+
+    renderer.render(scene, camera);
   }
-  loop();
+  animate();
 
   window.addEventListener('resize', () => {
-    W = window.innerWidth; H = window.innerHeight;
-    canvas.width = W; canvas.height = H;
-    pts.forEach(p => { p.x = Math.random()*W; p.y = Math.random()*H; });
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
   });
 })();
 

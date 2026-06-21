@@ -1,0 +1,50 @@
+.spectre-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 3.5rem;
+}
+
+.spectre-stack-module {
+  background: var(--bg2);
+  padding: 1.4rem;
+  border-top: 2px solid var(--red);
+  transition: background 0.2s ease;
+}
+
+.spectre-stack-module:hover {
+  background: var(--bg3);
+}
+
+.spectre-stack-module-label {
+  font-family: var(--bc);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+
+.spectre-stack-module-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.spectre-usage {
+  max-width: 32rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .spectre-stack-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .spectre-stack-grid { grid-template-columns: 1fr; }
+}

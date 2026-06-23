@@ -1,0 +1,105 @@
+.spectre-projects-scroll {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  background: var(--border);
+  border: 1px solid var(--border);
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+
+.spectre-project-card {
+  scroll-snap-align: start;
+  flex: 0 0 min(360px, 86vw);
+  background: var(--bg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  border-left: 3px solid transparent;
+  transition: background 0.2s, border-color 0.15s, transform 0.2s, box-shadow 0.2s;
+}
+
+.spectre-project-card:hover {
+  background: var(--bg2);
+  border-left-color: var(--red);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(232, 0, 45, 0.08);
+}
+
+.spectre-pi-num {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--t3);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.9rem;
+}
+
+.spectre-pi-name {
+  font-family: var(--bc);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.spectre-pi-desc {
+  font-size: 0.78rem;
+  color: var(--t2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.spectre-pi-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.4rem;
+}
+
+.spectre-project-card:hover .spectre-chip {
+  border-color: rgba(232, 0, 45, 0.2);
+}
+
+.spectre-pi-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.spectre-pi-links {
+  display: flex;
+  gap: 0.9rem;
+}
+
+.spectre-plink {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--t3);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.spectre-plink:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.spectre-live-badge {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid rgba(232, 0, 45, 0.3);
+  color: var(--red);
+  letter-spacing: 0.12em;
+  background: rgba(232, 0, 45, 0.05);
+  width: fit-content;
+}

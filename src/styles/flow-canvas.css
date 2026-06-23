@@ -1,0 +1,223 @@
+/* ============================================================
+   SPECTRE FLOW CANVAS — n8n-style agent card layout
+   ============================================================ */
+
+.spectre-flow-section {
+  padding-bottom: 6rem;
+}
+
+.spectre-flow-intro {
+  font-size: 0.88rem;
+  color: var(--t2);
+  line-height: 1.75;
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+
+/* Outer wrapper — horizontal scroll on small screens */
+.spectre-flow-wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1.5rem var(--edge) 2rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+
+/* Fixed-size canvas — cards and SVG live inside */
+.spectre-flow-canvas {
+  position: relative;
+  flex-shrink: 0;
+  min-height: 820px;
+}
+
+/* SVG connector layer — sits behind cards */
+.spectre-flow-svg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Animated dashed lines */
+.spectre-flow-line-anim {
+  stroke-dashoffset: 0;
+  animation: spectre-dash-flow 1.8s linear infinite;
+}
+
+@keyframes spectre-dash-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+/* ---- Agent card ---- */
+.spectre-flow-card {
+  position: absolute;
+  z-index: 2;
+  padding: 0;
+  border-radius: 2px;
+  overflow: hidden;
+
+  /* glassmorphism */
+  background: rgba(10, 10, 14, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Colored top accent bar */
+.spectre-flow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--fc);
+  box-shadow: 0 0 12px var(--fc), 0 0 24px color-mix(in srgb, var(--fc) 40%, transparent);
+}
+
+/* Left edge glow */
+.spectre-flow-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--fc), transparent 70%);
+  opacity: 0.6;
+}
+
+.spectre-flow-card:hover {
+  transform: rotate(0deg) translateY(-4px) !important;
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.6),
+    0 0 24px color-mix(in srgb, var(--fc) 20%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Header row */
+.spectre-fc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.spectre-fc-title-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.spectre-fc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--fc);
+  box-shadow: 0 0 8px var(--fc);
+  animation: spectre-blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.spectre-fc-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fc);
+}
+
+.spectre-fc-status {
+  font-family: var(--mono);
+  font-size: 0.54rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid var(--fc);
+  color: var(--fc);
+  background: color-mix(in srgb, var(--fc) 10%, transparent);
+}
+
+/* Big stat number */
+.spectre-fc-big {
+  font-family: var(--bc);
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--fc);
+  line-height: 1;
+  padding: 14px 16px 3px;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 20px color-mix(in srgb, var(--fc) 50%, transparent);
+}
+
+.spectre-fc-big-label {
+  font-family: var(--mono);
+  font-size: 0.57rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--t3);
+  padding: 0 16px 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Data rows */
+.spectre-fc-rows {
+  padding: 6px 0;
+}
+
+.spectre-fc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: background 0.15s ease;
+}
+
+.spectre-fc-row:last-child {
+  border-bottom: none;
+}
+
+.spectre-flow-card:hover .spectre-fc-row {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.spectre-fc-row-k {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--t3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.spectre-fc-row-v {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--fc);
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+/* Stack footer */
+.spectre-fc-stack {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.08em;
+  padding: 8px 16px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectre-flow-line-anim { animation: none; }
+  .spectre-fc-dot { animation: none; }
+}

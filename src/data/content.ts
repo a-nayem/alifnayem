@@ -72,7 +72,7 @@ export interface SkillCategory {
 
 export const skillCategories: SkillCategory[] = [
   {
-    icon: '⚡',
+    icon: '👾',
     name: 'Agentic AI',
     sub: 'Systems & Orchestration',
     items: [

@@ -274,7 +274,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'NFC'],
     category: 'creative',
     nfc: true,
-    links: [{ label: 'Live ↗', href: 'https://mood-dice.vercel.app' }],
+    links: [{ label: 'Live ↗', href: 'https://mood-dice-rouge.vercel.app' }],
   },
 ]
 

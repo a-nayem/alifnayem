@@ -53,7 +53,7 @@ const SEQUENCE: Line[] = [
 
   // whoami
   { type: 'cmd',     delay: 380,  text: '$ whoami' },
-  { type: 'out',     delay: 140,  text: '  A. Nayem — Cyber Security Engineer · AI Architect · AI Infrastructure' },
+  { type: 'out',     delay: 140,  text: '  A. Nayem — Cyber Security Engineer · AI Architect · AI Engineer' },
   { type: 'out',     delay: 60,   text: '  Founder, Spectre Flow · Building Interspace' },
   { type: 'gap',     delay: 0,    text: '' },
 

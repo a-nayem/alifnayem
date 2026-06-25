@@ -1,0 +1,274 @@
+/* ── Category labels ── */
+.spectre-projects-category-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spectre-projects-category-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--red);
+  flex-shrink: 0;
+}
+
+.spectre-projects-category-label--creative {
+  margin-top: 3.5rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.spectre-projects-category-label--creative::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.spectre-nfc-note {
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.12em;
+}
+
+/* ── Grids ── */
+.spectre-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 0.5rem;
+}
+
+.spectre-projects-grid--creative {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── Card ── */
+.spectre-project-card {
+  position: relative;
+  background: rgba(8, 8, 12, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.spectre-project-card:hover {
+  background: rgba(14, 14, 20, 0.92);
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(232, 0, 45, 0.2),
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(232, 0, 45, 0.04);
+  z-index: 2;
+}
+
+/* shimmer sweep on hover */
+.spectre-card-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: -100% 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: background-position 0s;
+}
+
+.spectre-project-card:hover .spectre-card-shimmer {
+  background-position: 200% 0;
+  transition: background-position 0.6s ease;
+}
+
+/* ── Thumbnail ── */
+.spectre-card-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(135deg, rgba(232, 0, 45, 0.06) 0%, rgba(0,0,0,0) 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      rgba(255,255,255,0.015) 24px,
+      rgba(255,255,255,0.015) 25px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 24px,
+      rgba(255,255,255,0.015) 24px,
+      rgba(255,255,255,0.015) 25px
+    );
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.spectre-card-thumb--creative {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0,0,0,0) 60%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 24px,
+      rgba(255,255,255,0.01) 24px,
+      rgba(255,255,255,0.01) 25px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 24px,
+      rgba(255,255,255,0.01) 24px,
+      rgba(255,255,255,0.01) 25px
+    );
+}
+
+/* when user drops an image, it fills the thumb */
+.spectre-card-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.spectre-project-card:hover .spectre-card-thumb img {
+  opacity: 1;
+}
+
+.spectre-card-thumb-num {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  color: var(--t3);
+}
+
+.spectre-nfc-tag {
+  font-family: var(--mono);
+  font-size: 0.46rem;
+  letter-spacing: 0.14em;
+  color: rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.18rem 0.45rem;
+}
+
+/* ── Card body ── */
+.spectre-card-body {
+  padding: 1.2rem 1.4rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.spectre-pi-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.spectre-pi-name {
+  font-family: var(--bc);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.spectre-pi-desc {
+  font-size: 0.75rem;
+  color: var(--t2);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.spectre-pi-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem;
+}
+
+.spectre-project-card:hover .spectre-chip {
+  border-color: rgba(232, 0, 45, 0.2);
+}
+
+.spectre-pi-links {
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.spectre-plink {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  color: var(--t3);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.spectre-plink:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+.spectre-live-badge {
+  font-family: var(--mono);
+  font-size: 0.46rem;
+  padding: 0.16rem 0.5rem;
+  border: 1px solid rgba(232, 0, 45, 0.3);
+  color: var(--red);
+  letter-spacing: 0.12em;
+  background: rgba(232, 0, 45, 0.05);
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .spectre-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .spectre-projects-grid--creative {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .spectre-projects-grid,
+  .spectre-projects-grid--creative {
+    grid-template-columns: 1fr;
+  }
+}

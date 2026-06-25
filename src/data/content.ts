@@ -218,7 +218,7 @@ export const projects: Project[] = [
     desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Spectre Flow infrastructure.',
     stack: ['HTML', 'JavaScript', 'Qdrant', 'Deepseek-R1', 'Canvas 3D'],
     category: 'main',
-    links: [{ label: 'GitHub', href: 'https://spectre-vault.vercel.app' }],
+    links: [{ label: 'Demo ↗', href: 'https://spectre-vault.vercel.app' }],
   },
   {
     num: '004',

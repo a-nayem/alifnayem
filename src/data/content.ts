@@ -275,7 +275,7 @@ export const projects: Project[] = [
     fullDesc: 'Spectre Vault is the flagship product of the Spectre Flow agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
     stack: ['HTML', 'JavaScript', 'Qdrant', 'Deepseek-R1', 'Canvas 3D', 'Next.js'],
     category: 'main',
-    links: [{ label: 'GitHub', href: 'https://github.com/Darkus39' }],
+    links: [{ label: 'Demo ↗', href: 'https://spectre-vault.vercel.app' }],
     timeline: [
       { date: '~6 months ago', event: 'Architecture design — 4-agent system with episodic memory' },
       { date: '~5 months ago', event: 'MVP HTML demo built — terminal interface, agent loop, basic metrics' },
@@ -453,7 +453,7 @@ export const projects: Project[] = [
     stack: ['Next.js', 'TypeScript', 'NFC', 'Vercel'],
     category: 'creative',
     nfc: true,
-    links: [{ label: 'Live ↗', href: 'https://mood-dice.vercel.app' }],
+    links: [{ label: 'Live ↗', href: 'https://mood-dice-rouge.vercel.app' }],
     timeline: [
       { date: '~2 months ago', event: 'Concept — dice mechanic for spontaneous positive action' },
       { date: '~2 months ago', event: 'Built and deployed on Vercel' },

@@ -56,10 +56,6 @@ export function Hero() {
           ))}
         </div>
       </div>
-      <div className="spectre-scroll-hint">
-        <div className="spectre-scroll-bar" />
-        Scroll
-      </div>
     </section>
   )
 }

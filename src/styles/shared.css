@@ -1,0 +1,79 @@
+.spectre-btn {
+  font-family: var(--bc);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8rem 2.2rem;
+  border: 1px solid var(--border2);
+  color: var(--t2);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  transition: color 0.2s, border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.spectre-btn:hover {
+  color: var(--white);
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 0, 45, 0.2);
+}
+
+.spectre-btn-red {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.spectre-btn-red:hover {
+  background: var(--red-dim);
+  box-shadow: 0 8px 32px rgba(232, 0, 45, 0.35);
+}
+
+.spectre-chip {
+  font-family: var(--mono);
+  font-size: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  border: 1px solid var(--border2);
+  color: var(--t3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.spectre-bar-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.spectre-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), rgba(232, 0, 45, 0.5));
+  width: 0;
+  transition: width 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.spectre-focus-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.spectre-focus-name {
+  font-family: var(--bc);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--t2);
+}
+
+.spectre-focus-pct {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--red);
+}

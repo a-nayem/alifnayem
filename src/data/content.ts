@@ -16,7 +16,7 @@ export const navSections: NavSection[] = [
 export const driver = {
   name: 'A. Nayem',
   fullName: 'Alif Nayem',
-  role: 'AI Engineer | Autonomous Systems | Secure Infrastructure',
+  role: 'Cyber Security Engineer | AI Architect | AI Engineer',
   position: 'Founder — Spectre Flow',
   bio: 'Building autonomous AI systems that run themselves. From multi-agent pipelines to self-hosted infrastructure — I design for precision, zero cloud dependency, and full data ownership.',
   github: 'Darkus39',

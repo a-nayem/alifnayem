@@ -278,6 +278,7 @@ export const projects: Project[] = [
     desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Spectre Flow infrastructure.',
     fullDesc: 'Spectre Vault is the flagship product of the Spectre Flow agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
     stack: ['HTML', 'JavaScript', 'Qdrant', 'Deepseek-R1', 'Canvas 3D', 'Next.js'],
+    status: 'LIVE',
     category: 'main',
     links: [{ label: 'Demo ↗', href: 'https://spectre-vault.vercel.app' }],
     timeline: [

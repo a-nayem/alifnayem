@@ -1,0 +1,252 @@
+/* ============================================================
+   GLASSMORPHISM — applied site-wide to all card surfaces.
+   Single definition, referenced everywhere via the .glass
+   utility and direct overrides below.
+   ============================================================ */
+
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.055);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(232, 0, 45, 0.25);
+  --glass-blur: blur(14px);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  --glass-shadow-hover: 0 8px 40px rgba(232, 0, 45, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ---- skill cards ---- */
+.spectre-skill-cat {
+  background: rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+.spectre-skill-cat::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(232, 0, 45, 0.07) 0%, transparent 65%) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s !important;
+  pointer-events: none !important;
+}
+
+/* shimmer sweep identical to tool cards */
+.spectre-skill-cat::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 40%;
+  height: 180%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transform: rotate(20deg);
+  animation: glass-shimmer 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spectre-skill-cat:nth-child(2)::after { animation-delay: 1s; }
+.spectre-skill-cat:nth-child(3)::after { animation-delay: 2s; }
+.spectre-skill-cat:nth-child(4)::after { animation-delay: 3s; }
+.spectre-skill-cat:nth-child(5)::after { animation-delay: 4s; }
+.spectre-skill-cat:nth-child(6)::after { animation-delay: 5s; }
+.spectre-skill-cat:nth-child(7)::after { animation-delay: 6s; }
+.spectre-skill-cat:nth-child(8)::after { animation-delay: 7s; }
+
+.spectre-skill-cat:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(232, 0, 45, 0.3) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+}
+
+.spectre-skill-cat:hover::before {
+  opacity: 1 !important;
+}
+
+/* ---- project cards ---- */
+.spectre-project-card {
+  background: rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-left: 3px solid transparent !important;
+  box-shadow: var(--glass-shadow);
+  transition: background 0.25s ease, border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease !important;
+}
+
+.spectre-project-card:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-left-color: var(--red) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* ---- tech stack modules ---- */
+.spectre-stack-module {
+  background: rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-top: 2px solid var(--red) !important;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.spectre-stack-module::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 40%;
+  height: 180%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transform: rotate(20deg);
+  animation: glass-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.spectre-stack-module:nth-child(2)::after { animation-delay: 1.5s; }
+.spectre-stack-module:nth-child(3)::after { animation-delay: 3s; }
+.spectre-stack-module:nth-child(4)::after { animation-delay: 4.5s; }
+
+.spectre-stack-module:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+}
+
+/* ---- tool cards ---- */
+.spectre-tool-cat {
+  background: rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+.spectre-tool-cat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(232, 0, 45, 0.06) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.spectre-tool-cat:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-color: rgba(232, 0, 45, 0.3) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+  transform: translateY(-2px);
+}
+
+.spectre-tool-cat:hover::before {
+  opacity: 1;
+}
+
+.spectre-tool-cat::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -60%;
+  width: 40%;
+  height: 180%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.04), transparent);
+  transform: rotate(20deg);
+  animation: glass-shimmer 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.spectre-tool-cat:nth-child(2)::after { animation-delay: 0.8s; }
+.spectre-tool-cat:nth-child(3)::after { animation-delay: 1.6s; }
+.spectre-tool-cat:nth-child(4)::after { animation-delay: 2.4s; }
+.spectre-tool-cat:nth-child(5)::after { animation-delay: 3.2s; }
+.spectre-tool-cat:nth-child(6)::after { animation-delay: 4.0s; }
+.spectre-tool-cat:nth-child(7)::after { animation-delay: 4.8s; }
+.spectre-tool-cat:nth-child(8)::after { animation-delay: 5.6s; }
+
+/* ---- data panel (about section) ---- */
+.spectre-data-panel {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-top: 2px solid var(--red) !important;
+  box-shadow: var(--glass-shadow);
+  transform: perspective(800px) rotateY(-2deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease !important;
+}
+
+.spectre-data-panel:hover {
+  transform: perspective(800px) rotateY(0deg) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+}
+
+/* ---- contact cards ---- */
+.spectre-contact-card {
+  background: rgba(255, 255, 255, 0.045) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-left: 3px solid transparent !important;
+  box-shadow: var(--glass-shadow);
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+
+.spectre-contact-card:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border-left-color: var(--red) !important;
+  box-shadow: var(--glass-shadow-hover) !important;
+}
+
+/* ---- nav ---- */
+.spectre-nav {
+  background: rgba(6, 6, 8, 0.6) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ---- grid gap overrides: glass cards need breathing room ---- */
+.spectre-skills-grid,
+.spectre-stack-grid,
+.spectre-tools-grid,
+.spectre-contact-grid {
+  background: transparent !important;
+  gap: 10px !important;
+  border: none !important;
+}
+
+.spectre-projects-scroll {
+  background: transparent !important;
+  gap: 12px !important;
+  border: none !important;
+  padding-bottom: 8px;
+}
+
+/* ---- shared shimmer keyframe ---- */
+@keyframes glass-shimmer {
+  0% { transform: translateX(-100%) rotate(20deg); }
+  100% { transform: translateX(300%) rotate(20deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectre-tool-cat::after,
+  .spectre-skill-cat::after,
+  .spectre-stack-module::after { animation: none; }
+}

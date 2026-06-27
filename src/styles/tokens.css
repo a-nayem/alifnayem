@@ -1,0 +1,37 @@
+/* ============================================================
+   Design tokens — ported 1:1 from the original HTML palette.
+   ============================================================ */
+
+:root {
+  --bg: #060608;
+  --bg2: #0c0c10;
+  --bg3: #12121a;
+
+  --red: #e8002d;
+  --red-dim: rgba(232, 0, 45, 0.08);
+  --red-glow: rgba(232, 0, 45, 0.4);
+
+  --white: #ffffff;
+
+  --t1: rgba(255, 255, 255, 0.96);
+  --t2: rgba(255, 255, 255, 0.75);
+  --t3: rgba(255, 255, 255, 0.38);
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border2: rgba(255, 255, 255, 0.12);
+
+  --bc: 'Barlow Condensed', sans-serif;
+  --b: 'Barlow', sans-serif;
+  --mono: 'DM Mono', monospace;
+
+  --container-w: 1160px;
+  --edge: 2.5rem;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --edge: 1.5rem;
+  }
+}

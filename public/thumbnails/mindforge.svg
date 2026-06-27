@@ -1,0 +1,26 @@
+<svg width="100%" viewBox="0 0 680 382" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>MindForge thumbnail</title>
+  <rect width="680" height="382" fill="#060608"/>
+  <rect x="0" y="0" width="680" height="2" fill="#E8002D" opacity="0.7"/>
+  <!-- phone outline -->
+  <rect x="255" y="40" width="170" height="280" rx="12" fill="#0a0a0f" stroke="#1a1a1f" stroke-width="1.5"/>
+  <rect x="265" y="55" width="150" height="250" rx="4" fill="#060608" stroke="#1a1a1f" stroke-width="0.5"/>
+  <!-- timer ring -->
+  <circle cx="340" cy="130" r="44" fill="none" stroke="#1a1a1f" stroke-width="3"/>
+  <circle cx="340" cy="130" r="44" fill="none" stroke="#E8002D" stroke-width="3" stroke-dasharray="138 276" stroke-linecap="square" transform="rotate(-90 340 130)"/>
+  <text x="340" y="126" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="18" fill="#ffffff" font-weight="600">23s</text>
+  <text x="340" y="142" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#E8002D" opacity="0.6" letter-spacing="2">TIMER</text>
+  <!-- domain tags -->
+  <rect x="277" y="188" width="56" height="18" rx="0" fill="#0d0d14" stroke="#E8002D" stroke-width="0.5"/>
+  <text x="305" y="200" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#E8002D" letter-spacing="1">DSA</text>
+  <rect x="339" y="188" width="56" height="18" rx="0" fill="#0d0d14" stroke="#1a1a1f" stroke-width="0.5"/>
+  <text x="367" y="200" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#ffffff" opacity="0.4" letter-spacing="1">AI/ML</text>
+  <!-- xp bar -->
+  <rect x="277" y="218" width="136" height="6" rx="0" fill="#1a1a1f"/>
+  <rect x="277" y="218" width="88" height="6" rx="0" fill="#E8002D" opacity="0.8"/>
+  <text x="277" y="240" font-family="'JetBrains Mono', monospace" font-size="7" fill="#E8002D" opacity="0.5" letter-spacing="1">LVL 07 · 1240 XP</text>
+  <path d="M40,342 L40,362 L60,362" fill="none" stroke="#E8002D" stroke-width="1" opacity="0.5"/>
+  <path d="M640,342 L640,362 L620,362" fill="none" stroke="#E8002D" stroke-width="1" opacity="0.5"/>
+  <text x="40" y="355" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E8002D" opacity="0.5" letter-spacing="3">005</text>
+  <text x="340" y="370" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" fill="#ffffff" opacity="0.6" letter-spacing="4">MINDFORGE</text>
+</svg>

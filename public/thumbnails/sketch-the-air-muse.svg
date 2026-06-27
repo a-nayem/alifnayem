@@ -1,0 +1,25 @@
+<svg width="100%" viewBox="0 0 680 382" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Sketch the Air Muse thumbnail</title>
+  <rect width="680" height="382" fill="#060608"/>
+  <rect x="0" y="0" width="680" height="2" fill="#f59e0b" opacity="0.5"/>
+  <!-- pencil sketch lines -->
+  <path d="M200,280 Q260,160 340,120 Q420,80 480,180" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+  <path d="M180,260 Q250,150 340,110 Q430,70 500,200" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity="0.2"/>
+  <!-- muse orb -->
+  <circle cx="340" cy="160" r="50" fill="none" stroke="#f59e0b" stroke-width="0.8" opacity="0.3"/>
+  <circle cx="340" cy="160" r="30" fill="none" stroke="#f59e0b" stroke-width="0.8" opacity="0.5"/>
+  <circle cx="340" cy="160" r="12" fill="#f59e0b" opacity="0.6"/>
+  <!-- sparkles -->
+  <line x1="310" y1="120" x2="310" y2="108" stroke="#f59e0b" stroke-width="0.8" opacity="0.5"/>
+  <line x1="304" y1="114" x2="316" y2="114" stroke="#f59e0b" stroke-width="0.8" opacity="0.5"/>
+  <line x1="370" y1="115" x2="370" y2="103" stroke="#f59e0b" stroke-width="0.8" opacity="0.4"/>
+  <line x1="364" y1="109" x2="376" y2="109" stroke="#f59e0b" stroke-width="0.8" opacity="0.4"/>
+  <!-- mood prompt -->
+  <rect x="220" y="240" width="240" height="28" rx="0" fill="#0d0d12" stroke="#f59e0b" stroke-width="0.5" opacity="0.6"/>
+  <text x="340" y="258" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#f59e0b" opacity="0.7" letter-spacing="1">✦ what's stirring in you?</text>
+  <!-- NFC -->
+  <rect x="300" y="290" width="80" height="24" rx="0" fill="none" stroke="#f59e0b" stroke-width="0.5" opacity="0.4"/>
+  <text x="340" y="306" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#f59e0b" opacity="0.5" letter-spacing="2">NFC CARD</text>
+  <text x="40" y="355" font-family="'JetBrains Mono', monospace" font-size="11" fill="#f59e0b" opacity="0.4" letter-spacing="3">008</text>
+  <text x="340" y="370" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" opacity="0.5" letter-spacing="3">SKETCH THE AIR MUSE</text>
+</svg>

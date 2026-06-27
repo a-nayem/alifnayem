@@ -1,0 +1,34 @@
+<svg width="100%" viewBox="0 0 680 382" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>Spectre CRM thumbnail</title>
+  <rect width="680" height="382" fill="#060608"/>
+  <rect x="0" y="0" width="680" height="2" fill="#E8002D" opacity="0.7"/>
+  <!-- kanban columns -->
+  <rect x="40" y="60" width="130" height="220" rx="0" fill="#0a0a0f" stroke="#1a1a1f" stroke-width="1"/>
+  <text x="105" y="82" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#E8002D" letter-spacing="2">INBOUND</text>
+  <rect x="55" y="95" width="100" height="44" rx="0" fill="#0d0d14" stroke="#E8002D" stroke-width="0.6"/>
+  <text x="105" y="113" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffffff" opacity="0.6">James Okafor</text>
+  <text x="105" y="127" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#E8002D" opacity="0.6">9/10</text>
+  <rect x="55" y="148" width="100" height="44" rx="0" fill="#0d0d14" stroke="#1a1a1f" stroke-width="0.6"/>
+  <text x="105" y="166" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffffff" opacity="0.5">Felix Wagner</text>
+  <text x="105" y="180" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="7" fill="#ffffff" opacity="0.35">8/10</text>
+
+  <rect x="190" y="60" width="130" height="220" rx="0" fill="#0a0a0f" stroke="#1a1a1f" stroke-width="1"/>
+  <text x="255" y="82" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ffffff" opacity="0.5" letter-spacing="2">QUALIFIED</text>
+  <rect x="205" y="95" width="100" height="44" rx="0" fill="#0d0d14" stroke="#1a1a1f" stroke-width="0.6"/>
+  <text x="255" y="113" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffffff" opacity="0.5">Sara Lindqvist</text>
+
+  <rect x="340" y="60" width="130" height="220" rx="0" fill="#0a0a0f" stroke="#1a1a1f" stroke-width="1"/>
+  <text x="405" y="82" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ffffff" opacity="0.5" letter-spacing="2">PROPOSAL</text>
+  <rect x="355" y="95" width="100" height="44" rx="0" fill="#0d0d14" stroke="#1a1a1f" stroke-width="0.6"/>
+  <text x="405" y="113" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffffff" opacity="0.5">Mei Lin</text>
+
+  <rect x="490" y="60" width="130" height="220" rx="0" fill="#0a0a0f" stroke="#1a1a1f" stroke-width="1"/>
+  <text x="555" y="82" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="9" fill="#ffffff" opacity="0.5" letter-spacing="2">CLOSED</text>
+  <rect x="505" y="95" width="100" height="44" rx="0" fill="#0d0d14" stroke="#E8002D" stroke-width="0.6" opacity="0.7"/>
+  <text x="555" y="113" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" fill="#ffffff" opacity="0.5">Ahmad Karimi</text>
+
+  <path d="M40,342 L40,362 L60,362" fill="none" stroke="#E8002D" stroke-width="1" opacity="0.5"/>
+  <path d="M640,342 L640,362 L620,362" fill="none" stroke="#E8002D" stroke-width="1" opacity="0.5"/>
+  <text x="40" y="355" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E8002D" opacity="0.5" letter-spacing="3">004</text>
+  <text x="340" y="370" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="13" fill="#ffffff" opacity="0.6" letter-spacing="4">SPECTRE CRM</text>
+</svg>

@@ -1,6 +1,6 @@
 .hero-terminal {
   width: 100%;
-  max-width: 780px;
+  max-width: 100%;
   background: rgba(6, 6, 8, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);

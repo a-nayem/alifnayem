@@ -39,8 +39,10 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Terminal sits beside the name, between name and scroll hint */}
-          <HeroTerminal />
+          {/* Terminal: absolutely positioned, never fights with name */}
+          <div className="hero-terminal-slot">
+            <HeroTerminal />
+          </div>
         </div>
 
         {/* Stats bridge — sits between hero content and about section */}

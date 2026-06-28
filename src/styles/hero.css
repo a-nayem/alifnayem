@@ -38,7 +38,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: clamp(380px, 42vw, 640px);
+  width: clamp(420px, 48vw, 700px);
 }
 
 @keyframes spectre-herorise {

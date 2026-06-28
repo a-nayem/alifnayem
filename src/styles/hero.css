@@ -10,25 +10,243 @@
   flex-direction: column;
   justify-content: center;
   min-height: calc(100vh - 52px);
-  padding: 3rem 260px 0 3rem;
+  padding: 3rem 280px 0 3rem;
   gap: 2.5rem;
+  position: relative;
 }
 
 .spectre-hero-row {
   display: flex;
   align-items: flex-start;
-  gap: 3.5rem;
   flex: 1;
+  position: relative;
 }
 
 .spectre-hero-content {
   flex: 1;
   min-width: 0;
+  max-width: 560px;
   opacity: 0;
   transform: translateY(30px) rotateX(8deg);
   transform-origin: center bottom;
   animation: spectre-herorise 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
+
+/* Terminal: absolutely positioned between content and spiral rail */
+.hero-terminal-slot {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(320px, 36vw, 560px);
+}
+
+@keyframes spectre-herorise {
+  to { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+.spectre-hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spectre-hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--red);
+}
+
+.spectre-hero-name {
+  font-family: var(--bc);
+  font-size: clamp(5rem, 11vw, 10rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.88;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.spectre-hero-name .spectre-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.15);
+}
+
+.spectre-hero-name:hover .spectre-glitch-text {
+  animation: spectre-glitch 0.4s ease;
+}
+
+@keyframes spectre-glitch {
+  0% { transform: none; opacity: 1; }
+  7% { transform: skewX(-10deg); opacity: 0.8; }
+  10% { transform: none; opacity: 1; }
+  27% { transform: none; opacity: 1; }
+  30% { transform: skewX(6deg); text-shadow: 0.08em 0 0 rgba(232, 0, 45, 0.8), -0.05em 0 0 rgba(0, 100, 255, 0.4); }
+  35% { transform: none; text-shadow: none; }
+  100% { transform: none; opacity: 1; }
+}
+
+.spectre-hero-pos {
+  font-family: var(--bc);
+  font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--t2);
+  margin-bottom: 2.2rem;
+}
+
+.spectre-hero-pos em {
+  color: var(--red);
+  font-style: normal;
+}
+
+.spectre-hero-bio {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--t2);
+  max-width: 500px;
+  margin-bottom: 3rem;
+}
+
+.spectre-hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.spectre-hero-stats {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  opacity: 0;
+  animation: spectre-herorise 0.9s ease 0.6s forwards;
+  margin-top: auto;
+}
+
+.spectre-stat-row {
+  flex: 1;
+  padding: 1.4rem 2rem;
+  border-right: 1px solid var(--border);
+}
+
+.spectre-stat-row:last-child {
+  border-right: none;
+}
+
+.spectre-stat-label {
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 0.3rem;
+}
+
+.spectre-stat-val {
+  font-family: var(--bc);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+
+.spectre-stat-val sub {
+  font-size: 0.85rem;
+  color: var(--red);
+  font-weight: 600;
+}
+
+.spectre-stat-val.is-small {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  letter-spacing: 0.05em;
+}
+
+.spectre-stat-val.is-alert {
+  font-size: 0.78rem;
+  color: var(--red);
+  letter-spacing: 0.08em;
+}
+
+.spectre-scroll-bar {
+  width: 40px;
+  height: 1px;
+  background: var(--border2);
+  position: relative;
+  overflow: hidden;
+}
+
+.spectre-scroll-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  animation: spectre-scan 2.2s linear infinite;
+}
+
+@keyframes spectre-scan {
+  to { left: 100%; }
+}
+
+/* Hide terminal on tablet/mobile — spiral rail also hides there */
+@media (max-width: 1100px) {
+  .hero-terminal-slot {
+    display: none;
+  }
+  .spectre-hero-inner {
+    padding: 3rem 2.5rem 0 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .spectre-hero-inner {
+    padding: 2.5rem 1.5rem 0 1.5rem;
+    gap: 2rem;
+  }
+  .spectre-hero-content {
+    max-width: 100%;
+  }
+  .spectre-hero-stats {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .spectre-stat-row {
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .spectre-stat-row:nth-child(2n) {
+    border-right: none;
+  }
+  .spectre-stat-row:first-child { border-top: none; }
+}
+
+@media (min-width: 1400px) {
+  .spectre-hero-stats {
+    padding-right: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectre-scroll-bar::after { animation: none; left: 0; }
+}
+
 
 @keyframes spectre-herorise {
   to { opacity: 1; transform: translateY(0) rotateX(0); }

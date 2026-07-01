@@ -17,7 +17,7 @@ export const driver = {
   name: 'A. Nayem',
   fullName: 'Alif Nayem',
   role: 'Cyber Security Engineer | AI Architect | AI Engineer',
-  position: 'Founder — Spectre Flow',
+  position: 'Founder — Trisien Automence',
   bio: 'Building autonomous AI systems that run themselves. From multi-agent pipelines to self-hosted infrastructure — I design for precision, zero cloud dependency, and full data ownership.',
   github: 'Darkus39',
   instagram: '@_a.nayem_',
@@ -28,13 +28,13 @@ export const driver = {
 export const heroStats = [
   { label: 'Projects Built', value: '13', suffix: '+' },
   { label: 'Live Deployments', value: '5', suffix: '+' },
-  { label: 'Agency', value: 'SPECTRE FLOW' },
+  { label: 'Agency', value: 'TRISIEN AUTOMENCE' },
   { label: 'Availability', value: "LET'S BUILD", alert: true },
 ]
 
 export const aboutCopy = [
   "I'm Alif Nayem — a self-taught builder operating at the intersection of AI, automation, and cybersecurity. Based in Bangladesh, building globally.",
-  'I founded Spectre Flow, an AI infrastructure agency focused on helping businesses replace repetitive processes with intelligent, self-running systems — zero recurring SaaS fees, full data ownership.',
+  'I founded Trisien Automence, an AI infrastructure agency focused on helping businesses replace repetitive processes with intelligent, self-running systems — zero recurring SaaS fees, full data ownership.',
   "From 6-agent autonomous pipelines to self-hosted CRMs and offensive security tooling, my work leans toward the experimental. Every project is a test of what's possible with focused intent and modern tooling.",
 ]
 
@@ -51,7 +51,7 @@ export const focusBars = [
 export const driverProfile = [
   { k: 'Handle', v: 'A. Nayem' },
   { k: 'Role', v: 'AI Systems Architect', tone: 'red' as const },
-  { k: 'Agency', v: 'Spectre Flow' },
+  { k: 'Agency', v: 'Trisien Automence' },
   { k: 'Location', v: 'Dhaka, Bangladesh', tone: 'dim' as const },
   { k: 'Stack', v: 'Python · TS · FastAPI', tone: 'dim' as const },
   { k: 'Focus', v: 'Autonomous AI · Security', tone: 'dim' as const },
@@ -242,13 +242,13 @@ export const projects: Project[] = [
     num: '002',
     slug: 'spectreflow-site',
     thumbnail: '/thumbnails/spectreflow-site.svg',
-    name: 'SpectreFlow — Agency Site',
-    desc: 'Marketing site for Spectre Flow with an OrbitalMesh hero — Canvas 2D perspective projection, orbital card layout, and animated agent nodes. Designed to convert cold visitors into booked calls.',
-    fullDesc: 'The SpectreFlow agency site is the public face of the agency — built to communicate trust, capability, and momentum to cold visitors in under 10 seconds. The OrbitalMesh hero is a Canvas 2D gyroscope-ring sphere with six agent cards orbiting it using 3D XYZ rotation math and perspective projection — no Three.js, no WebGL, pure Canvas 2D math. The site features a glassmorphism design system built on void blacks, electric indigo, liquid teal, and gold accents. Magnetic buttons, pipeline visualizations, card tilt interactions, and shimmer animations are all CSS and vanilla JS — zero animation libraries. Copy targets Canada, Germany, Australia, and the Netherlands markets with tailored objection handling and pricing. The site was rebuilt multiple times from scratch as the agency brand evolved.',
+    name: 'Trisien Automence — Agency Site',
+    desc: 'Marketing site for Trisien Automence with an OrbitalMesh hero — Canvas 2D perspective projection, orbital card layout, and animated agent nodes. Designed to convert cold visitors into booked calls.',
+    fullDesc: 'The Trisien Automence agency site is the public face of the agency — built to communicate trust, capability, and momentum to cold visitors in under 10 seconds. The OrbitalMesh hero is a Canvas 2D gyroscope-ring sphere with six agent cards orbiting it using 3D XYZ rotation math and perspective projection — no Three.js, no WebGL, pure Canvas 2D math. The site features a glassmorphism design system built on void blacks, electric indigo, liquid teal, and gold accents. Magnetic buttons, pipeline visualizations, card tilt interactions, and shimmer animations are all CSS and vanilla JS — zero animation libraries. Copy targets Canada, Germany, Australia, and the Netherlands markets with tailored objection handling and pricing. The site was rebuilt multiple times from scratch as the agency brand evolved.',
     stack: ['Next.js', 'TypeScript', 'Canvas 2D', 'Tailwind', 'Vercel'],
     status: 'LIVE',
     category: 'main',
-    links: [{ label: 'Live ↗', href: 'https://spectre-flow.vercel.app' }],
+    links: [{ label: 'Live ↗', href: 'https://trisien-automence.vercel.app' }],
     timeline: [
       { date: '~5 months ago', event: 'Initial build — basic React site with glassmorphism system' },
       { date: '~3 months ago', event: 'First major rebuild — 3D knowledge graph, magnetic buttons, pipeline viz' },
@@ -264,7 +264,7 @@ export const projects: Project[] = [
       'No paid AI tools used at any point — all design, copy, and code iterations were done through free-tier tooling and manual AI engineering',
     ],
     learned: [
-      '3D rotation math and perspective projection on Canvas 2D — a skill that transferred directly to Spectre Vault',
+      '3D rotation math and perspective projection on Canvas 2D — a skill that transferred directly to Trisien Vault',
       'How to write conversion-focused copy for B2B enterprise markets across different cultural registers',
       'The discipline of iterating on a live marketing site without breaking it for active prospects',
       'Building magnetic and physics-feeling UI interactions with pure CSS transforms and vanilla JS',
@@ -274,9 +274,9 @@ export const projects: Project[] = [
     num: '003',
     slug: 'spectre-vault',
     thumbnail: '/thumbnails/spectre-vault.svg',
-    name: 'Spectre Vault',
-    desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Spectre Flow infrastructure.',
-    fullDesc: 'Spectre Vault is the flagship product of the Spectre Flow agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
+    name: 'Trisien Vault',
+    desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Trisien Automence infrastructure.',
+    fullDesc: 'Trisien Vault is the flagship product of the Trisien Automence agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
     stack: ['HTML', 'JavaScript', 'Qdrant', 'Deepseek-R1', 'Canvas 3D', 'Next.js'],
     status: 'LIVE',
     category: 'main',
@@ -306,9 +306,9 @@ export const projects: Project[] = [
     num: '004',
     slug: 'spectre-crm',
     thumbnail: '/thumbnails/spectre-crm.svg',
-    name: 'Spectre CRM',
+    name: 'Trisien CRM',
     desc: 'Self-hosted agentic CRM with 4-stage Kanban pipeline, AI lead scoring via n8n, real-time Supabase sync under 500ms, and multi-market support (CA, DE, AU, NL). Replaces ~$200/year in SaaS. Cut lead processing time by 90%.',
-    fullDesc: 'Spectre CRM is a self-hosted agentic sales pipeline built to replace paid CRM tools entirely. It features a 4-stage Kanban board (Inbound → Qualified → Proposal → Closed) with AI lead scoring powered by n8n automation webhooks. Each lead is automatically scored by an AI agent on inbound, routed by market (Canada, Germany, Australia, Netherlands), and surfaced with priority flags. Real-time sync via Supabase keeps the pipeline under 500ms latency. The demo version shows a live pipeline with plausible leads across all four markets — each with AI scores, source tracking, and stage history. The production version connects to live lead sources via WhatsApp, form submissions, and Apollo.io enrichment.',
+    fullDesc: 'Trisien CRM is a self-hosted agentic sales pipeline built to replace paid CRM tools entirely. It features a 4-stage Kanban board (Inbound → Qualified → Proposal → Closed) with AI lead scoring powered by n8n automation webhooks. Each lead is automatically scored by an AI agent on inbound, routed by market (Canada, Germany, Australia, Netherlands), and surfaced with priority flags. Real-time sync via Supabase keeps the pipeline under 500ms latency. The demo version shows a live pipeline with plausible leads across all four markets — each with AI scores, source tracking, and stage history. The production version connects to live lead sources via WhatsApp, form submissions, and Apollo.io enrichment.',
     stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'n8n', 'Vercel'],
     status: 'LIVE',
     category: 'main',
@@ -579,9 +579,9 @@ export const toolCategories: ToolCategory[] = [
 ]
 
 export const contactChannels = [
-  { label: 'Agency', value: 'spectre-flow.vercel.app', href: 'https://spectre-flow.vercel.app' },
+  { label: 'Agency', value: 'trisien-automence.vercel.app', href: 'https://trisien-automence.vercel.app' },
   { label: 'Book a Call', value: 'cal.com/ayanokouji', href: 'https://cal.com/ayanokouji-j98vjt' },
-  { label: 'LinkedIn', value: 'Alif Nayem', href: 'https://linkedin.com/in/alifnayem-spectreflow' },
+  { label: 'LinkedIn', value: 'Alif Nayem', href: 'https://linkedin.com/in/alifnayem-trisienautomence' },
   { label: 'Instagram', value: '@_a.nayem_', href: 'https://instagram.com/_a.nayem_' },
   { label: 'GitHub', value: 'Darkus39', href: 'https://github.com/Darkus39' },
 ]

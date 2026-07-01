@@ -18,7 +18,7 @@ export function Hero() {
               <div className="spectre-outline spectre-glitch-text">NAYEM</div>
             </h1>
             <div className="spectre-hero-pos">
-              Founder — <em>Spectre Flow</em>
+              Founder — <em>Trisien Automence</em>
             </div>
             <p className="spectre-hero-bio">{driver.bio}</p>
             <div className="spectre-hero-cta">

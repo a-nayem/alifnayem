@@ -27,7 +27,7 @@ const SEQUENCE: Line[] = [
   { type: 'banner',   delay: 60,   text: BANNER[4] },
   { type: 'banner',   delay: 60,   text: BANNER[5] },
   { type: 'subtitle', delay: 120,  text: 'Executive Local Unified System for Intelligent Versatile Engineering' },
-  { type: 'subtitle', delay: 60,   text: 'Powered by Spie  ·  Full PC Control  ·  Zero Cloud' },
+  { type: 'subtitle', delay: 60,   text: 'Powered by Troy  ·  Full PC Control  ·  Zero Cloud' },
   { type: 'gap',      delay: 0,    text: '' },
 
   // Boot
@@ -54,7 +54,7 @@ const SEQUENCE: Line[] = [
   // whoami
   { type: 'cmd',     delay: 380,  text: '$ whoami' },
   { type: 'out',     delay: 140,  text: '  A. Nayem — Cyber Security Engineer · AI Architect · AI Infrastructure' },
-  { type: 'out',     delay: 60,   text: '  Founder, Spectre Flow · Building Interspace' },
+  { type: 'out',     delay: 60,   text: '  Founder, Trisien Automence · Building Interspace' },
   { type: 'gap',     delay: 0,    text: '' },
 
   // skills
@@ -67,7 +67,7 @@ const SEQUENCE: Line[] = [
 
   // projects
   { type: 'cmd',     delay: 320,  text: '$ ls projects/' },
-  { type: 'out',     delay: 120,  text: '  spectreflow-site/      spectre-vault/          spectre-crm/' },
+  { type: 'out',     delay: 120,  text: '  trisien-automence/      trisien-vault/          trisien-crm/' },
   { type: 'out',     delay: 40,   text: '  mindforge/             second-brain/           elusive-story/' },
   { type: 'out',     delay: 40,   text: '  sketch-the-air/        mood-dice/' },
   { type: 'gap',     delay: 0,    text: '' },

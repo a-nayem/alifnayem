@@ -580,7 +580,7 @@ export const toolCategories: ToolCategory[] = [
 
 export const contactChannels = [
   { label: 'Agency', value: 'trisien-automence.vercel.app', href: 'https://trisien-automence.vercel.app' },
-  { label: 'Book a Call', value: 'cal.com/ayanokouji', href: 'https://cal.com/ayanokouji-j98vjt' },
+  { label: 'Book a Call', value: 'cal.com/alifnayem', href: 'https://cal.com/alifnayem' },
   { label: 'LinkedIn', value: 'Alif Nayem', href: 'https://linkedin.com/in/alifnayem-trisienautomence' },
   { label: 'Instagram', value: '@_a.nayem_', href: 'https://instagram.com/_a.nayem_' },
   { label: 'GitHub', value: 'Darkus39', href: 'https://github.com/Darkus39' },

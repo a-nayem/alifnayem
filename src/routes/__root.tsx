@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { title: 'A. NAYEM — AI ARCHITECT' },
       {
         name: 'description',
-        content: 'Alif Nayem — AI Architect & Founder of Spectre Flow.',
+        content: 'Alif Nayem — AI Architect & Founder of Trisien Automence.',
       },
     ],
     links: [

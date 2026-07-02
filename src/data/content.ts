@@ -515,8 +515,8 @@ export const techStackModules: TechModule[] = [
 export const skillUsage = [
   { name: 'Cybersecurity & Ethical Hacking', pct: 90 },
   { name: 'AI Infrastructure & Agents', pct: 80 },
-  { name: 'Automation Pipeline Engineering', pct: 75 },
-  { name: 'Data Science & ML', pct: 85 },
+  { name: 'Automation Pipeline Engineering', pct: 80 },
+  { name: 'Data Science & ML', pct: 80 },
   { name: 'Web Development', pct: 80 },
 ]
 

@@ -241,7 +241,7 @@ export const projects: Project[] = [
   {
     num: '002',
     slug: 'spectreflow-site',
-    thumbnail: '/thumbnails/spectreflow-site.svg',
+    thumbnail: '/thumbnails/trisien-automence-website.svg',
     name: 'Trisien Automence — Agency Site',
     desc: 'Marketing site for Trisien Automence with an OrbitalMesh hero — Canvas 2D perspective projection, orbital card layout, and animated agent nodes. Designed to convert cold visitors into booked calls.',
     fullDesc: 'The Trisien Automence agency site is the public face of the agency — built to communicate trust, capability, and momentum to cold visitors in under 10 seconds. The OrbitalMesh hero is a Canvas 2D gyroscope-ring sphere with six agent cards orbiting it using 3D XYZ rotation math and perspective projection — no Three.js, no WebGL, pure Canvas 2D math. The site features a glassmorphism design system built on void blacks, electric indigo, liquid teal, and gold accents. Magnetic buttons, pipeline visualizations, card tilt interactions, and shimmer animations are all CSS and vanilla JS — zero animation libraries. Copy targets Canada, Germany, Australia, and the Netherlands markets with tailored objection handling and pricing. The site was rebuilt multiple times from scratch as the agency brand evolved.',
@@ -273,7 +273,7 @@ export const projects: Project[] = [
   {
     num: '003',
     slug: 'spectre-vault',
-    thumbnail: '/thumbnails/spectre-vault.svg',
+    thumbnail: '/thumbnails/trisien-vault.svg',
     name: 'Trisien Vault',
     desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Trisien Automence infrastructure.',
     fullDesc: 'Trisien Vault is the flagship product of the Trisien Automence agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
@@ -305,7 +305,7 @@ export const projects: Project[] = [
   {
     num: '004',
     slug: 'spectre-crm',
-    thumbnail: '/thumbnails/spectre-crm.svg',
+    thumbnail: '/thumbnails/trisien-crm.svg',
     name: 'Trisien CRM',
     desc: 'Self-hosted agentic CRM with 4-stage Kanban pipeline, AI lead scoring via n8n, real-time Supabase sync under 500ms, and multi-market support (CA, DE, AU, NL). Replaces ~$200/year in SaaS. Cut lead processing time by 90%.',
     fullDesc: 'Trisien CRM is a self-hosted agentic sales pipeline built to replace paid CRM tools entirely. It features a 4-stage Kanban board (Inbound → Qualified → Proposal → Closed) with AI lead scoring powered by n8n automation webhooks. Each lead is automatically scored by an AI agent on inbound, routed by market (Canada, Germany, Australia, Netherlands), and surfaced with priority flags. Real-time sync via Supabase keeps the pipeline under 500ms latency. The demo version shows a live pipeline with plausible leads across all four markets — each with AI scores, source tracking, and stage history. The production version connects to live lead sources via WhatsApp, form submissions, and Apollo.io enrichment.',
@@ -368,7 +368,7 @@ export const projects: Project[] = [
   {
     num: '006',
     slug: 'MultiAgent - OS',
-    thumbnail: '/thumbnails/second-brain.svg',
+    thumbnail: '/thumbnails/multiagent-os.svg',
     name: 'MultiAgent - OS',
     desc: 'AI knowledge management system with 5 agents - Researcher, Summarizer, Connector, Daily Digest, Custom — running on Gemini 2.5 Flash. Features a knowledge graph, notes, tasks, projects, and a daily digest. Browser-local key storage, zero server.',
     fullDesc: 'Second Brain is a fully client-side AI knowledge management system running on Gemini 2.5 Flash. Five agents handle distinct cognitive tasks: Researcher surfaces relevant papers and insights, Summarizer auto-tags and condenses new notes, Connector finds hidden relationships between nodes in the knowledge graph, Daily Digest compiles a morning brief from recent activity, and a Custom Agent slot for user-defined tasks. All data stays in the browser — no server, no database, no cloud. The API key is stored locally and never touches any server except Google\'s. The knowledge graph auto-links nodes by AI-detected relationships and renders with drag-to-rotate interaction. Notes, tasks, projects, and agent outputs are all unified in a single dashboard.',

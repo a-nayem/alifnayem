@@ -367,9 +367,9 @@ export const projects: Project[] = [
   },
   {
     num: '006',
-    slug: 'second-brain',
+    slug: 'MultiAgent - OS',
     thumbnail: '/thumbnails/second-brain.svg',
-    name: 'Second Brain',
+    name: 'MultiAgent - OS',
     desc: 'AI knowledge management system with 5 agents - Researcher, Summarizer, Connector, Daily Digest, Custom — running on Gemini 2.5 Flash. Features a knowledge graph, notes, tasks, projects, and a daily digest. Browser-local key storage, zero server.',
     fullDesc: 'Second Brain is a fully client-side AI knowledge management system running on Gemini 2.5 Flash. Five agents handle distinct cognitive tasks: Researcher surfaces relevant papers and insights, Summarizer auto-tags and condenses new notes, Connector finds hidden relationships between nodes in the knowledge graph, Daily Digest compiles a morning brief from recent activity, and a Custom Agent slot for user-defined tasks. All data stays in the browser — no server, no database, no cloud. The API key is stored locally and never touches any server except Google\'s. The knowledge graph auto-links nodes by AI-detected relationships and renders with drag-to-rotate interaction. Notes, tasks, projects, and agent outputs are all unified in a single dashboard.',
     stack: ['Next.js', 'TypeScript', 'Gemini API', 'Zustand', 'Vercel'],
@@ -439,7 +439,7 @@ export const projects: Project[] = [
     nfc: true,
     links: [{ label: 'Live ↗', href: 'https://sketch-the-air.vercel.app' }],
     timeline: [
-      { date: '~2 months ago', event: 'Concept — AI muse character, mood + scene mechanic designed' },
+      { date: '~2 months ago', event: 'Concept - AI muse character, mood + scene mechanic designed' },
       { date: '~2 months ago', event: 'Built and deployed on Vercel' },
       { date: '~2 months ago', event: 'NFC card written, sticker applied, delivered as a physical gift' },
     ],

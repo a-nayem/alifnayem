@@ -276,6 +276,31 @@
   align-self: flex-start;
 }
 
+.spectre-live-badge--production {
+  border-color: rgba(0, 229, 160, 0.35);
+  color: #00e5a0;
+  background: rgba(0, 229, 160, 0.06);
+}
+
+.spectre-live-badge--live-demo {
+  border-color: rgba(232, 0, 45, 0.3);
+  color: var(--red);
+  background: rgba(232, 0, 45, 0.05);
+}
+
+.spectre-live-badge--prototype,
+.spectre-live-badge--internal-test {
+  border-color: rgba(255, 176, 32, 0.35);
+  color: #ffb020;
+  background: rgba(255, 176, 32, 0.06);
+}
+
+.spectre-live-badge--personal-rd {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--t3);
+  background: rgba(255, 255, 255, 0.02);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1100px) {
   .spectre-projects-grid {

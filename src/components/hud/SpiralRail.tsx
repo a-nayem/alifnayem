@@ -4,15 +4,14 @@ import { useEffect } from 'react'
 import { navSections } from '@/data/content'
 
 const VB_H = 1000
-const NODE_Y = [40, 224, 408, 592, 776, 960] // evenly spaced, matches navSections order
+const NODE_Y = [40, 270, 500, 730, 960] // evenly spaced, matches navSections order
 
 const SPINE_PATH = `
   M 70 40
-  C 30 96, 110 168, 70 224
-  C 30 280, 110 352, 70 408
-  C 30 464, 110 536, 70 592
-  C 30 648, 110 720, 70 776
-  C 30 832, 110 904, 70 960
+  C 30 109, 110 200, 70 270
+  C 30 339, 110 430, 70 500
+  C 30 569, 110 660, 70 730
+  C 30 799, 110 890, 70 960
 `
 
 function scrollToSection(id: string) {

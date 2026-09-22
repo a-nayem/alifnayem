@@ -1,8 +1,18 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
-import { projects } from '@/data/content'
+import { projects, type StatusLabel } from '@/data/content'
 import { Background } from '@/components/Background'
 import { CustomCursor } from '@/components/CustomCursor'
 import '@/styles/project-detail.css'
+
+function statusClass(label: StatusLabel) {
+  switch (label) {
+    case 'Production': return 'pd-live-badge--production'
+    case 'Live Demo': return 'pd-live-badge--live-demo'
+    case 'Prototype': return 'pd-live-badge--prototype'
+    case 'Internal Test': return 'pd-live-badge--internal-test'
+    case 'Personal R&D': return 'pd-live-badge--personal-rd'
+  }
+}
 
 export const Route = createFileRoute('/projects/$slug')({
   component: ProjectDetail,
@@ -46,7 +56,7 @@ function ProjectDetail() {
           <header className="pd-header">
             <div className="pd-header-meta">
               <span className="pd-category-tag">{project.category === 'creative' ? 'Creative / Side Project' : 'Main Project'}</span>
-              {project.status && <span className="pd-live-badge">● {project.status}</span>}
+              <span className={`pd-live-badge ${statusClass(project.statusLabel)}`}>● {project.statusLabel}</span>
               {project.nfc && <span className="pd-nfc-badge">NFC</span>}
             </div>
             <h1 className="pd-title">{project.name}</h1>
@@ -64,10 +74,37 @@ function ProjectDetail() {
             {/* Left column */}
             <div className="pd-col-main">
 
+              {/* Problem */}
+              {project.problem && (
+                <section className="pd-section">
+                  <div className="pd-section-label">// Problem</div>
+                  <p className="pd-body">{project.problem}</p>
+                </section>
+              )}
+
               {/* Full description */}
               <section className="pd-section">
                 <div className="pd-section-label">// Overview</div>
                 <p className="pd-body">{project.fullDesc}</p>
+              </section>
+
+              {/* Core contribution */}
+              <section className="pd-section">
+                <div className="pd-section-label">// Core Contribution</div>
+                <p className="pd-body pd-contribution">{project.contribution}</p>
+              </section>
+
+              {/* Architecture flow */}
+              <section className="pd-section">
+                <div className="pd-section-label">// Architecture</div>
+                <div className="pd-arch-flow">
+                  {project.architecture.split('→').map((step, i, arr) => (
+                    <span key={i} className="pd-arch-step-wrap">
+                      <span className="pd-arch-step">{step.trim()}</span>
+                      {i < arr.length - 1 && <span className="pd-arch-arrow">→</span>}
+                    </span>
+                  ))}
+                </div>
               </section>
 
               {/* Challenges */}
@@ -99,6 +136,15 @@ function ProjectDetail() {
 
             {/* Right column */}
             <div className="pd-col-side">
+
+              {/* Result */}
+              {project.result && (
+                <section className="pd-section pd-section--card pd-section--result">
+                  <div className="pd-section-label">// Result</div>
+                  <div className="pd-result-metric">{project.result.metric}</div>
+                  <div className="pd-result-context">{project.result.context}</div>
+                </section>
+              )}
 
               {/* Tech stack */}
               <section className="pd-section pd-section--card">

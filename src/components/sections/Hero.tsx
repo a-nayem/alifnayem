@@ -36,6 +36,14 @@ export function Hero() {
               >
                 Get In Touch
               </a>
+              <a
+                href={`https://github.com/${driver.github}`}
+                target="_blank"
+                rel="noreferrer"
+                className="spectre-btn"
+              >
+                GitHub ↗
+              </a>
             </div>
           </div>
 

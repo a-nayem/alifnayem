@@ -2,7 +2,17 @@ import { useRef } from 'react'
 import { Link } from '@tanstack/react-router'
 import { useRegisterSection } from '@/lib/use-scroll-engine'
 import { useReveal } from '@/lib/use-reveal'
-import { projects } from '@/data/content'
+import { projects, type StatusLabel } from '@/data/content'
+
+function statusClass(label: StatusLabel) {
+  switch (label) {
+    case 'Production': return 'spectre-live-badge--production'
+    case 'Live Demo': return 'spectre-live-badge--live-demo'
+    case 'Prototype': return 'spectre-live-badge--prototype'
+    case 'Internal Test': return 'spectre-live-badge--internal-test'
+    case 'Personal R&D': return 'spectre-live-badge--personal-rd'
+  }
+}
 
 export function Projects() {
   const ref = useRef<HTMLElement>(null)
@@ -40,7 +50,7 @@ export function Projects() {
               <div className="spectre-card-body">
                 <div className="spectre-pi-header">
                   <div className="spectre-pi-name">{p.name}</div>
-                  {p.status && <span className="spectre-live-badge">● {p.status}</span>}
+                  <span className={`spectre-live-badge ${statusClass(p.statusLabel)}`}>● {p.statusLabel}</span>
                 </div>
 
                 <p className="spectre-pi-desc">{p.desc}</p>
@@ -85,6 +95,7 @@ export function Projects() {
               <div className="spectre-card-body">
                 <div className="spectre-pi-header">
                   <div className="spectre-pi-name">{p.name}</div>
+                  <span className={`spectre-live-badge ${statusClass(p.statusLabel)}`}>● {p.statusLabel}</span>
                 </div>
 
                 <p className="spectre-pi-desc">{p.desc}</p>

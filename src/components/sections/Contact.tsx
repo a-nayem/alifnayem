@@ -5,14 +5,14 @@ import { contactChannels } from '@/data/content'
 
 export function Contact() {
   const ref = useRef<HTMLElement>(null)
-  useRegisterSection(ref, { id: 'contact', num: '06', label: 'Contact' })
+  useRegisterSection(ref, { id: 'contact', num: '04', label: 'Contact' })
   const reveal = useReveal<HTMLDivElement>()
 
   return (
     <section id="contact" ref={ref} className="spectre-section">
       <div className="spectre-container">
         <div className="spectre-sec-label">
-          <span className="spectre-sec-num">06 —</span>
+          <span className="spectre-sec-num">04 —</span>
           <h2 className="spectre-sec-title">Contact</h2>
           <div className="spectre-sec-line" />
         </div>

@@ -1,12 +1,13 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useRegisterSection } from '@/lib/use-scroll-engine'
 import { useReveal } from '@/lib/use-reveal'
-import { skillCategories } from '@/data/content'
+import { skillCategories, toolCategories } from '@/data/content'
 
 export function Skills() {
   const ref = useRef<HTMLElement>(null)
   useRegisterSection(ref, { id: 'skills', num: '02', label: 'Skills' })
   const grid = useReveal<HTMLDivElement>()
+  const [toolsOpen, setToolsOpen] = useState(false)
 
   return (
     <section id="skills" ref={ref} className="spectre-section">
@@ -22,6 +23,46 @@ export function Skills() {
             <SkillCard key={cat.name} icon={cat.icon} name={cat.name} sub={cat.sub} items={cat.items} />
           ))}
         </div>
+
+        <div className="spectre-tooling-toggle-row">
+          <button
+            type="button"
+            className="spectre-tooling-toggle"
+            aria-expanded={toolsOpen}
+            onClick={() => setToolsOpen((v) => !v)}
+          >
+            <span>{toolsOpen ? 'Hide' : 'Show'} Full Tooling Inventory</span>
+            <span className={`spectre-tooling-caret ${toolsOpen ? 'is-open' : ''}`} aria-hidden="true">
+              ▾
+            </span>
+          </button>
+        </div>
+
+        {toolsOpen && (
+          <div className="spectre-tools-grid spectre-tooling-panel">
+            {toolCategories.map((cat) => (
+              <div
+                key={cat.id}
+                className="spectre-tool-cat"
+                onMouseMove={(e) => {
+                  const r = e.currentTarget.getBoundingClientRect()
+                  e.currentTarget.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`)
+                  e.currentTarget.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`)
+                }}
+              >
+                <div className="spectre-tool-cat-name">{cat.label}</div>
+                <div className="spectre-tool-cat-sub">{cat.sub}</div>
+                <div className="spectre-tool-list">
+                  {cat.tools.map((tool) => (
+                    <span key={tool} className="spectre-chip">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )

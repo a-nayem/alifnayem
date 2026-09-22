@@ -1,4 +1,4 @@
-import { navSections } from '@/data/content'
+import { navSections, driver } from '@/data/content'
 
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -24,6 +24,11 @@ export function Nav() {
             </a>
           </li>
         ))}
+        <li>
+          <a href={`https://github.com/${driver.github}`} target="_blank" rel="noreferrer" className="spectre-nav-github">
+            GitHub ↗
+          </a>
+        </li>
       </ul>
       <div className="spectre-nav-right">
         <div className="spectre-nav-dot" />

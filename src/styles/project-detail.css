@@ -88,6 +88,31 @@
   background: rgba(232, 0, 45, 0.05);
 }
 
+.pd-live-badge--production {
+  border-color: rgba(0, 229, 160, 0.35);
+  color: #00e5a0;
+  background: rgba(0, 229, 160, 0.06);
+}
+
+.pd-live-badge--live-demo {
+  border-color: rgba(232, 0, 45, 0.3);
+  color: var(--red);
+  background: rgba(232, 0, 45, 0.05);
+}
+
+.pd-live-badge--prototype,
+.pd-live-badge--internal-test {
+  border-color: rgba(255, 176, 32, 0.35);
+  color: #ffb020;
+  background: rgba(255, 176, 32, 0.06);
+}
+
+.pd-live-badge--personal-rd {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--t3);
+  background: rgba(255, 255, 255, 0.02);
+}
+
 .pd-nfc-badge {
   font-family: var(--mono);
   font-size: 0.48rem;
@@ -174,6 +199,64 @@
   font-size: 0.82rem;
   color: var(--t2);
   line-height: 1.8;
+}
+
+.pd-contribution {
+  color: var(--t1);
+  border-left: 2px solid var(--red);
+  padding-left: 1rem;
+}
+
+/* Architecture flow chain */
+.pd-arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pd-arch-step-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pd-arch-step {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  color: var(--t1);
+  border: 1px solid var(--border2);
+  background: var(--bg2);
+  padding: 0.4rem 0.7rem;
+  white-space: nowrap;
+}
+
+.pd-arch-arrow {
+  color: var(--red);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Result callout */
+.pd-section--result {
+  border-top-color: rgba(0, 229, 160, 0.45);
+}
+
+.pd-result-metric {
+  font-family: var(--bc);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #00e5a0;
+  line-height: 1.3;
+  margin-bottom: 0.6rem;
+}
+
+.pd-result-context {
+  font-size: 0.72rem;
+  color: var(--t3);
+  line-height: 1.6;
+  font-style: italic;
 }
 
 /* List */

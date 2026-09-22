@@ -55,6 +55,12 @@
   border-bottom-color: var(--red);
 }
 
+.spectre-nav-github {
+  color: var(--red) !important;
+  border-left: 1px solid var(--border);
+  margin-left: 0.4rem;
+}
+
 .spectre-nav-right {
   display: flex;
   align-items: center;

@@ -8,9 +8,7 @@ export const navSections: NavSection[] = [
   { id: 'about', num: '01', label: 'About' },
   { id: 'skills', num: '02', label: 'Skills' },
   { id: 'projects', num: '03', label: 'Projects (9)' },
-  { id: 'tech-stack', num: '04', label: 'Tech Stack' },
-  { id: 'tools', num: '05', label: 'Tools' },
-  { id: 'contact', num: '06', label: 'Contact' },
+  { id: 'contact', num: '04', label: 'Contact' },
 ]
 
 export const driver = {
@@ -19,7 +17,7 @@ export const driver = {
   role: 'Cyber Security Engineer | AI Architect | AI Engineer',
   position: 'Founder — Trisien Automence',
   bio: 'Building autonomous AI systems that run themselves. From multi-agent pipelines to self-hosted infrastructure — I design for precision, zero cloud dependency, and full data ownership.',
-  github: 'Darkus39',
+  github: 'a-nayem',
   instagram: '@_a.nayem_',
   location: 'Dhaka, Bangladesh',
   stack: 'Python · TS · Next.js',
@@ -55,7 +53,7 @@ export const driverProfile = [
   { k: 'Location', v: 'Dhaka, Bangladesh', tone: 'dim' as const },
   { k: 'Stack', v: 'Python · TS · FastAPI', tone: 'dim' as const },
   { k: 'Focus', v: 'Autonomous AI · Security', tone: 'dim' as const },
-  { k: 'GitHub', v: 'Darkus39', tone: 'dim' as const },
+  { k: 'GitHub', v: 'a-nayem', tone: 'dim' as const },
   { k: 'Instagram', v: '@_a.nayem_', tone: 'dim' as const },
   { k: 'Projects', v: '13' },
   { k: 'Live Deploys', v: '5', tone: 'dim' as const },
@@ -73,28 +71,28 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     icon: '⚡',
-    name: 'Agentic AI',
-    sub: 'Systems & Orchestration',
+    name: 'AI Systems Engineering',
+    sub: 'Agents & Orchestration',
     items: [
-      'Multi-Agent Orchestration — n8n',
-      'RAG Pipeline Design — Pinecone',
-      'LLM API Integration — OpenAI / Gemini / Anthropic',
-      'Self-Hosted AI — Ollama / Deepseek-r1',
-      'Autonomous Workflow Architecture',
+      'Multi-Agent Orchestration & EventBus Architecture',
+      'RAG Pipeline Design — Qdrant / Pinecone',
+      'LLM API Integration — OpenAI / Anthropic / Gemini',
+      'Self-Hosted Inference — Ollama / Deepseek-R1',
       'Tool-Use & Function Calling',
+      'Workflow Automation — n8n / Webhooks / SSE',
     ],
   },
   {
-    icon: '💻',
-    name: 'Development',
-    sub: 'Languages & Frameworks',
+    icon: '🔐',
+    name: 'Cybersecurity',
+    sub: 'Offensive & Network',
     items: [
-      'Python — Async / FastAPI / asyncio',
-      'TypeScript — Next.js App Router',
-      'React — Hooks & State Architecture',
-      'Zustand / Context — State Management',
-      'Apache Cordova — Android APK',
-      'SQL · HTML/CSS · Bash',
+      'Penetration Testing — Kali Linux',
+      'Network Analysis — Wireshark / Nmap',
+      'Web Exploitation — Metasploit / sqlmap / Burp Suite',
+      'Credential Attacks — Hydra / Hashcat',
+      'Recon & OSINT — Shodan / Maltego',
+      'Wireless Security — Aircrack-ng',
     ],
   },
   {
@@ -102,77 +100,25 @@ export const skillCategories: SkillCategory[] = [
     name: 'Infrastructure',
     sub: 'DevOps & Self-Hosted',
     items: [
-      'Docker — Containerised Deployment',
+      'Docker — Containerized Deployment',
+      'Self-Hosted Systems — Zero Cloud Dependency by Design',
+      'PostgreSQL / Supabase — Schema, Realtime & Auth',
       'Cloudflare Tunnel & Zero Trust',
-      'Supabase — Realtime & Auth',
-      'PostgreSQL / SQLite — Schema Design',
-      'systemd — Service Management',
-      'Linux — Ubuntu / Kali',
-    ],
-  },
-  {
-    icon: '🧠',
-    name: 'ML & Vision',
-    sub: 'Models & Pipelines',
-    items: [
-      'Computer Vision — MediaPipe',
-      'Whisper STT — Real-Time Pipelines',
-      'Scikit-Learn — Model Training',
-      'Vector Embeddings — Pinecone / RAG',
-      'Multimodal AI — Gemini Vision',
-      'NumPy / Pandas — Data Processing',
-    ],
-  },
-  {
-    icon: '🔐',
-    name: 'Security',
-    sub: 'Offensive & Network',
-    items: [
-      'Penetration Testing — Kali Linux',
-      'Network Analysis — Wireshark',
-      'Exploitation — Metasploit / sqlmap',
-      'Credential Attacks — Hydra / Hashcat',
-      'Recon — Nmap / Shodan / Maltego',
-      'Wireless — Aircrack-ng',
-    ],
-  },
-  {
-    icon: '📦',
-    name: 'Product Shipping',
-    sub: 'End-to-End Delivery',
-    items: [
-      'Next.js — Full-Stack App Architecture',
-      'Monaco Editor — Browser IDE Integration',
-      'D3.js — Data Visualization',
-      'Apache Cordova — Native Android APK',
+      'Linux Administration — Ubuntu / Kali / systemd',
       'Vercel — Edge Deployment & CI/CD',
+    ],
+  },
+  {
+    icon: '💻',
+    name: 'Application Engineering',
+    sub: 'Frontend & Product',
+    items: [
+      'TypeScript — Next.js / TanStack Start',
+      'React 19 — Hooks & State Architecture',
+      'Zustand — State Management',
+      'Canvas 2D / WebGL — Hand-Built Visual Systems',
       'API-First Product Design',
-    ],
-  },
-  {
-    icon: '🔗',
-    name: 'Automation',
-    sub: 'Pipelines & Integrations',
-    items: [
-      'n8n — Visual Workflow Automation',
-      'Gmail API · Google Calendar',
-      'WhatsApp Business · Twilio',
-      'Discord · Apollo.io',
-      'Webhook Design & Event Handling',
-      'SSE & WebSocket Streaming',
-    ],
-  },
-  {
-    icon: '🎨',
-    name: 'UI & Design',
-    sub: 'Interface & Experience',
-    items: [
-      'Tailwind CSS — Utility-First Styling',
-      'Framer Motion — UI Animations',
-      'Figma — Wireframes & Prototyping',
-      'Design Systems & Token Architecture',
-      'Responsive & Mobile-First Layouts',
-      'Dark Mode & Theming Systems',
+      'Responsive, Accessible UI Systems',
     ],
   },
 ]
@@ -187,6 +133,13 @@ export interface ProjectTimelineEntry {
   event: string
 }
 
+export type StatusLabel = 'Production' | 'Live Demo' | 'Prototype' | 'Personal R&D' | 'Internal Test'
+
+export interface ProjectResult {
+  metric: string
+  context: string
+}
+
 export interface Project {
   num: string
   slug: string
@@ -194,7 +147,7 @@ export interface Project {
   desc: string
   fullDesc: string
   stack: string[]
-  status?: string
+  statusLabel: StatusLabel
   category: 'main' | 'creative'
   nfc?: boolean
   thumbnail: string
@@ -202,6 +155,14 @@ export interface Project {
   timeline: ProjectTimelineEntry[]
   challenges: string[]
   learned: string[]
+  /** What problem this system solves — one or two sentences. */
+  problem?: string
+  /** What I personally built — the core engineering contribution, distinct from the stack list. */
+  contribution: string
+  /** Compact architecture flow, rendered as an arrow chain (e.g. "Input → Process → Output"). */
+  architecture: string
+  /** A measured result, always paired with honest context about how it was measured. */
+  result?: ProjectResult
 }
 
 export const projects: Project[] = [
@@ -213,8 +174,11 @@ export const projects: Project[] = [
     desc: 'This site. Sim-racing HUD aesthetic built with TanStack Start, WebGL canvas background, Zustand telemetry state, RAF scroll physics, and a live ELUSIVE terminal. Deployed on Vercel with zero framework compromise.',
     fullDesc: 'This portfolio is not a template - it is a purpose-built system designed to communicate identity at a glance. The sim-racing HUD aesthetic draws from Assetto Corsa and cinematic game-engine UI. Every visual decision is intentional: the carbon-fiber texture, JetBrains Mono terminal, racing-red accents, and the ELUSIVE terminal that types live in the hero. Built on TanStack Start with Vite, it uses a single RAF scroll physics loop for smooth section transitions, Zustand for HUD telemetry state, and a WebGL canvas background running continuously without blocking the main thread. The spiral navigation rail on the right acts as a live section indicator. No UI library, no component kit — every element is hand-coded to spec.',
     stack: ['TanStack Start', 'TypeScript', 'Zustand', 'WebGL', 'Vite', 'CSS'],
-    status: 'LIVE',
+    statusLabel: 'Production',
     category: 'main',
+    problem: 'Most developer portfolios run on a template, which quietly undercuts every engineering claim inside it — the site itself proves nothing.',
+    contribution: 'Hand-built every interaction system from scratch: the RAF scroll-physics loop, the WebGL background, the Zustand telemetry store, and the ELUSIVE terminal typing engine — no animation library, no UI kit.',
+    architecture: 'Vite build → TanStack Start SSR → Zustand telemetry store → single RAF loop → WebGL canvas + scroll-linked reveals',
     links: [{ label: 'Live ↗', href: 'https://alifnayem.vercel.app' }],
     timeline: [
       { date: 'Early June 2026', event: 'Concept locked — sim-racing HUD aesthetic chosen' },
@@ -246,8 +210,11 @@ export const projects: Project[] = [
     desc: 'Marketing site for Trisien Automence with an OrbitalMesh hero — Canvas 2D perspective projection, orbital card layout, and animated agent nodes. Designed to convert cold visitors into booked calls.',
     fullDesc: 'The Trisien Automence agency site is the public face of the agency — built to communicate trust, capability, and momentum to cold visitors in under 10 seconds. The OrbitalMesh hero is a Canvas 2D gyroscope-ring sphere with six agent cards orbiting it using 3D XYZ rotation math and perspective projection — no Three.js, no WebGL, pure Canvas 2D math. The site features a glassmorphism design system built on void blacks, electric indigo, liquid teal, and gold accents. Magnetic buttons, pipeline visualizations, card tilt interactions, and shimmer animations are all CSS and vanilla JS — zero animation libraries. Copy targets Canada, Germany, Australia, and the Netherlands markets with tailored objection handling and pricing. The site was rebuilt multiple times from scratch as the agency brand evolved.',
     stack: ['Next.js', 'TypeScript', 'Canvas 2D', 'Tailwind', 'Vercel'],
-    status: 'LIVE',
+    statusLabel: 'Production',
     category: 'main',
+    problem: 'Cold B2B visitors across four markets need to trust an unfamiliar agency fast — generic SaaS-template signaling reads as low-effort and loses the call before it starts.',
+    contribution: 'Wrote the OrbitalMesh hero\'s 3D rotation and perspective-projection math directly in Canvas 2D from scratch, plus the full glassmorphism design system and market-specific copy for CA/DE/AU/NL.',
+    architecture: 'Next.js pages → Canvas 2D XYZ rotation + perspective projection (OrbitalMesh) → CSS/vanilla-JS magnetic interactions → market-routed copy',
     links: [{ label: 'Live ↗', href: 'https://trisien-automence.vercel.app' }],
     timeline: [
       { date: '~5 months ago', event: 'Initial build - basic React site with glassmorphism system' },
@@ -278,8 +245,11 @@ export const projects: Project[] = [
     desc: '4-agent agentic second brain — Analyst, Negotiator, Researcher, Communicator — running on self-hosted Deepseek-R1 with Qdrant vector memory, 342-node 3D knowledge graph, and live agent metrics dashboard. Deployed per client as part of Trisien Automence infrastructure.',
     fullDesc: 'Trisien Vault is the flagship product of the Trisien Automence agency — a multi-agent second brain deployed per client on their own self-hosted infrastructure. The MVP demo showcases four specialized agents: Analyst handles statistical modelling and anomaly detection, Negotiator runs Nash equilibrium models and strategy trees, Researcher indexes papers and maps concepts, and Communicator handles tone calibration and message framing across markets. All agents run on a self-hosted Deepseek-R1 70B model via Qdrant vector memory with 128-dimensional embeddings and episodic recall. The 3D knowledge graph renders 342 nodes using perspective projection on Canvas 2D with drag-to-rotate and scroll-to-zoom. The client-facing version is built in Next.js and deployed inside the client\'s own infrastructure — zero cloud dependency, full data ownership.',
     stack: ['HTML', 'JavaScript', 'Qdrant', 'Deepseek-R1', 'Canvas 3D', 'Next.js'],
-    status: 'LIVE',
+    statusLabel: 'Live Demo',
     category: 'main',
+    problem: 'A single generalist chatbot flattens distinct cognitive tasks — analysis, negotiation, research, communication — into one undifferentiated model, and cloud-hosted memory means giving up data ownership.',
+    contribution: 'Designed the 4-agent cognitive role split, wired the self-hosted Deepseek-R1 + Qdrant retrieval pipeline with 128-dim episodic memory, and built the 342-node 3D knowledge graph renderer on plain Canvas 2D.',
+    architecture: 'Query → agent router (Analyst / Negotiator / Researcher / Communicator) → Qdrant vector retrieval → self-hosted Deepseek-R1 → Canvas 2D knowledge-graph render',
     links: [{ label: 'Demo ↗', href: 'https://trisien-vault.vercel.app' }],
     timeline: [
       { date: '~6 months ago', event: 'Architecture design — 4-agent system with episodic memory' },
@@ -307,11 +277,18 @@ export const projects: Project[] = [
     slug: 'spectre-crm',
     thumbnail: '/thumbnails/trisien-crm.svg',
     name: 'Trisien CRM',
-    desc: 'Self-hosted agentic CRM with 4-stage Kanban pipeline, AI lead scoring via n8n, real-time Supabase sync under 500ms, and multi-market support (CA, DE, AU, NL). Replaces ~$200/year in SaaS. Cut lead processing time by 90%.',
+    desc: 'Self-hosted agentic CRM with 4-stage Kanban pipeline, AI lead scoring via n8n, and real-time Supabase sync under 500ms. Demo build with multi-market (CA, DE, AU, NL) synthetic pipeline data.',
     fullDesc: 'Trisien CRM is a self-hosted agentic sales pipeline built to replace paid CRM tools entirely. It features a 4-stage Kanban board (Inbound → Qualified → Proposal → Closed) with AI lead scoring powered by n8n automation webhooks. Each lead is automatically scored by an AI agent on inbound, routed by market (Canada, Germany, Australia, Netherlands), and surfaced with priority flags. Real-time sync via Supabase keeps the pipeline under 500ms latency. The demo version shows a live pipeline with plausible leads across all four markets — each with AI scores, source tracking, and stage history. The production version connects to live lead sources via WhatsApp, form submissions, and Apollo.io enrichment.',
     stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'n8n', 'Vercel'],
-    status: 'LIVE',
+    statusLabel: 'Live Demo',
     category: 'main',
+    problem: 'Manual lead triage is slow and paid CRM SaaS recurs forever while locking data in someone else\'s cloud — agencies need scoring and routing without either cost.',
+    contribution: 'Designed the n8n webhook pipeline connecting inbound leads to automatic AI scoring to CRM state, and the sub-500ms Supabase real-time sync layer behind the Kanban board.',
+    architecture: 'Lead inbound (form / WhatsApp / Apollo.io) → n8n webhook → AI scoring agent → Supabase write → real-time Kanban sync (<500ms)',
+    result: {
+      metric: '~90% faster lead triage vs. the manual process it replaced',
+      context: 'Measured in internal testing against a synthetic multi-market pipeline — not yet validated against live client volume or a real production deployment.',
+    },
     links: [{ label: 'Demo ↗', href: 'https://trisien-crm.vercel.app' }],
     timeline: [
       { date: '~5 months ago', event: 'Initial build — basic Kanban with Supabase backend' },
@@ -342,7 +319,11 @@ export const projects: Project[] = [
     desc: 'Fully offline Android quiz app for 6 domains - DSA, AI/ML, Logic, Databases, Negotiation, Mind Control — with 400 questions each across easy/medium/hard/killer tiers. 30s per question, XP tracking, level system, and a 30-minute daily lock to enforce intentional practice.',
     fullDesc: 'MindForge is a fully offline Android application built with Apache Cordova 12. It covers 6 knowledge domains — DSA, AI/ML, Logic, Databases, Negotiation, and Mind Control — with 400 questions per domain across four difficulty tiers: Easy, Medium, Hard, and Killer. Each question runs on a 30-second countdown timer. The XP and levelling system rewards correct answers and speed bonuses, while the 30-minute daily lock mechanic enforces intentional practice — after 30 minutes, XP and level progression pause for the day. Users can still practice beyond 30 minutes but gain no progression rewards. The app is entirely self-contained with no internet dependency, no external API calls, and no data leaving the device. Two more domains are currently in development.',
     stack: ['Apache Cordova 12', 'JavaScript', 'Android', 'LocalStorage', 'HTML/CSS'],
+    statusLabel: 'Personal R&D',
     category: 'main',
+    problem: 'Most quiz apps are ad-funded, online-only, and shallow — dense technical domains need an offline, distraction-free way to drill difficulty tiers repeatedly.',
+    contribution: 'Wrote the full question engine, the 30-second countdown timer, the XP/leveling system, and the 30-minute daily-lock mechanic in vanilla JS on Cordova, with no backend of any kind.',
+    architecture: 'Cordova WebView → local question engine (6 domains × 400 Qs × 4 tiers) → LocalStorage XP/level persistence → daily-lock timer gate',
     links: [{ label: 'GitHub', href: 'https://github.com/a-nayem/Mind-Forge' }],
     timeline: [
       { date: '~7 months ago', event: 'Concept and domain selection — 6 domains, 400 questions each' },
@@ -373,8 +354,11 @@ export const projects: Project[] = [
     desc: 'AI knowledge management system with 5 agents - Researcher, Summarizer, Connector, Daily Digest, Custom — running on Gemini 2.5 Flash. Features a knowledge graph, notes, tasks, projects, and a daily digest. Browser-local key storage, zero server.',
     fullDesc: 'Second Brain is a fully client-side AI knowledge management system running on Gemini 2.5 Flash. Five agents handle distinct cognitive tasks: Researcher surfaces relevant papers and insights, Summarizer auto-tags and condenses new notes, Connector finds hidden relationships between nodes in the knowledge graph, Daily Digest compiles a morning brief from recent activity, and a Custom Agent slot for user-defined tasks. All data stays in the browser — no server, no database, no cloud. The API key is stored locally and never touches any server except Google\'s. The knowledge graph auto-links nodes by AI-detected relationships and renders with drag-to-rotate interaction. Notes, tasks, projects, and agent outputs are all unified in a single dashboard.',
     stack: ['Next.js', 'TypeScript', 'Gemini API', 'Zustand', 'Vercel'],
-    status: 'LIVE',
+    statusLabel: 'Live Demo',
     category: 'main',
+    problem: 'Knowledge management tools default to a server and a subscription — this tests whether a fully client-side multi-agent system can be genuinely useful without either.',
+    contribution: 'Built the EventBus + AgentRegistry architecture that lets 5 concurrent agents share state and communicate without direct coupling, entirely client-side with browser-local key storage.',
+    architecture: 'User input → AgentRegistry dispatch → EventBus → concurrent agents (Researcher / Summarizer / Connector / Digest / Custom) → Gemini 2.5 Flash → Zustand store',
     links: [
       { label: 'Demo ↗', href: 'https://multi-agent-daily.vercel.app' },
       { label: 'GitHub', href: 'https://github.com/a-nayem/multi-agent-daily' },
@@ -408,8 +392,11 @@ export const projects: Project[] = [
     desc: 'A universe built for someone. 24 feelings, each mapped to a story, a mood, and a letter. Delivered as a physical NFC card with a custom sticker — tap to enter. An emotion-driven web experience that lives outside the screen.',
     fullDesc: 'Elusive — Story of Safety is a deeply personal web experience built as a gift. It maps 24 human feelings to individual stories, moods, and handwritten letters — each one a small universe. The experience is designed to be discovered, not searched for. It is delivered as a physical NFC card with a hand-applied custom sticker. Tapping the card opens the experience directly — no app, no login, no friction. The design is soft, intimate, and deliberately different from every other project in this portfolio. The idea, the narrative, the emotional architecture — all entirely original. AI was used only in the code, never in the concept.',
     stack: ['Next.js', 'TypeScript', 'NFC', 'Vercel'],
+    statusLabel: 'Live Demo',
     category: 'creative',
     nfc: true,
+    contribution: 'Designed and built the full experience end to end — the 24-feeling narrative structure, the emotional pacing, and the code. The concept and every letter are original; AI assisted only with implementation.',
+    architecture: 'NFC tap → deep link → Next.js route → feeling selector → story/mood/letter render, zero login or app required',
     links: [{ label: 'Live ↗', href: 'https://elusive-story-of-safety.vercel.app' }],
     timeline: [
       { date: '~3 months ago', event: 'Concept — 24 feelings mapped to stories, moods, and letters' },
@@ -435,8 +422,11 @@ export const projects: Project[] = [
     desc: 'An AI muse for an aspiring artist. Pick a mood and scene, summon a drawing idea, receive a message. Built as a personal gift - delivered on a handmade NFC card with a custom sticker.',
     fullDesc: 'Sketch the Air Muse is an AI-powered creative prompt generator built as a gift for an aspiring artist. The experience is built around a single question: what is stirring in you right now? The user picks a mood and a scene, and the muse generates a drawing idea tailored to that combination. A hidden personal message is embedded in the experience — visible only to the intended recipient. Like the other NFC projects, it is delivered as a physical card with a custom sticker. Tap to open. No app, no login. The concept, the narrative character of the muse, and the personal message are entirely original ideas — AI was used only to assist with the code.',
     stack: ['Next.js', 'TypeScript', 'NFC', 'Vercel'],
+    statusLabel: 'Live Demo',
     category: 'creative',
     nfc: true,
+    contribution: 'Built the mood + scene prompt engine, the muse\'s tone and character, and a hidden personal message layer visible only to the intended recipient. Concept and character entirely original; AI assisted only with the code.',
+    architecture: 'NFC tap → deep link → mood + scene picker → prompt-generation logic → tailored drawing idea + hidden message',
     links: [{ label: 'Live ↗', href: 'https://sketch-the-air.vercel.app' }],
     timeline: [
       { date: '~2 months ago', event: 'Concept - AI muse character, mood + scene mechanic designed' },
@@ -462,8 +452,11 @@ export const projects: Project[] = [
     desc: 'Roll a dice, get a positive action or mini challenge for the day. A tiny wellness tool with a big idea - that small spontaneous acts shift your mood. Delivered as an NFC card you tap when you need a nudge.',
     fullDesc: 'Mood Dice is the simplest of the NFC projects — and the most immediate. Roll a dice, get a positive action or mini challenge for the day. The idea is that small spontaneous acts — a walk, a message to a friend, a minute of stillness — shift your emotional state more reliably than planned routines. The experience is designed to be used in a moment of low mood or restlessness. It takes three seconds. The dice roll is animated, the result is clear, and the card sits on your desk ready to tap whenever you need a nudge. Like the other NFC projects, the concept is entirely original. AI assisted only with the code.',
     stack: ['Next.js', 'TypeScript', 'NFC', 'Vercel'],
+    statusLabel: 'Live Demo',
     category: 'creative',
     nfc: true,
+    contribution: 'Built the weighted dice animation, the action/challenge curation logic, and the single-mechanic interaction designed to feel physical rather than like a random number generator.',
+    architecture: 'NFC tap → deep link → dice-roll animation → weighted action-pool selection → result render',
     links: [{ label: 'Live ↗', href: 'https://mood-dice-rouge.vercel.app' }],
     timeline: [
       { date: '~2 months ago', event: 'Concept - dice mechanic for spontaneous positive action' },
@@ -481,43 +474,6 @@ export const projects: Project[] = [
       'Wellness product design requires honesty and specificity, not motivation-poster language',
     ],
   },
-]
-
-export interface TechModule {
-  id: string
-  label: string
-  tools: string[]
-}
-
-export const techStackModules: TechModule[] = [
-  {
-    id: 'security',
-    label: 'Security & Infrastructure',
-    tools: ['Kali Linux', 'Linux', 'Docker', 'Cloudflare', 'systemd', 'Wireshark'],
-  },
-  {
-    id: 'ai',
-    label: 'AI & Automation',
-    tools: ['n8n', 'LangChain', 'Anthropic', 'Gemini', 'OpenAI', 'Ollama', 'Pinecone'],
-  },
-  {
-    id: 'dev',
-    label: 'Development',
-    tools: ['Python', 'JavaScript', 'TypeScript', 'Java', 'SQL', 'HTML/CSS', 'Bash'],
-  },
-  {
-    id: 'data',
-    label: 'Data & Databases',
-    tools: ['PostgreSQL', 'SQLite', 'Supabase', 'NocoDB', 'NumPy', 'Pandas', 'Scikit-Learn'],
-  },
-]
-
-export const skillUsage = [
-  { name: 'Cybersecurity & Ethical Hacking', pct: 90 },
-  { name: 'AI Infrastructure & Agents', pct: 80 },
-  { name: 'Automation Pipeline Engineering', pct: 80 },
-  { name: 'Data Science & ML', pct: 80 },
-  { name: 'Web Development', pct: 80 },
 ]
 
 export interface ToolCategory {
